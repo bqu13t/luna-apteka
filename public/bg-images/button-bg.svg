@@ -13,10 +13,9 @@
       }
    </style>
    <defs>
-      <linearGradient id="lg_1" x1="0" x2="0" y1="1" y2="0">
-         <stop stop-color="#612961" offset="0" />
-         <stop stop-color="#992e6a" offset=".5" />
-         <stop stop-color="#de3e6c" offset=".75" />
+      <linearGradient id="lg_1" x1="0" x2="1" y1="0" y2="0">
+         <stop stop-color="#992e6a" offset="0" />
+         <stop stop-color="#de3e6c" offset=".5" />
          <stop stop-color="#ff6762" offset="1" />
       </linearGradient>
    </defs>
