@@ -1,8 +1,10 @@
 'use client'
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Dialog, Popover } from "@headlessui/react"
 import { useState, useRef } from "react"
+import clsx from "clsx"
 import {
   Bars3Icon,
   XMarkIcon,
@@ -17,6 +19,7 @@ import {
 import LogoSection from "@/components/header/header-nav/logo-section";
 
 export default function Header() {
+  const pathName = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -33,13 +36,33 @@ export default function Header() {
         </button>
 
         <Popover.Group className="header__nav__desktop-menu">
-          <Link href="promo" className="on-hover on-tap">Акции</Link>
-          <Link href="contacts" className="on-hover on-tap">Контакты</Link>
-          <Link href="work" className="on-hover on-tap">Работа в ЛунаФуд</Link>
-          <Link href="about" className="on-hover on-tap">О нас</Link>
+          <Link href="/promo" className={clsx(
+            "on-hover on-tap", {
+            "current-path": pathName === '/promo',
+          })}>
+            Акции
+          </Link>
+          <Link href="/contacts" className={clsx(
+            "on-hover on-tap", {
+            "current-path": pathName === '/contacts',
+          })}>
+            Контакты
+          </Link>
+          <Link href="/work" className={clsx(
+            "on-hover on-tap", {
+            "current-path": pathName === '/work',
+          })}>
+            Работа в ЛунаФуд
+          </Link>
+          <Link href="/about" className={clsx(
+            "on-hover on-tap", {
+            "current-path": pathName === '/about',
+          })}>
+            О нас
+          </Link>
         </Popover.Group>
         <div className="header__nav__desktop-menu">
-          <Link href="#" className="sr-only on-hover on-tap">Войти <span aria-hidden="true">&rarr;</span></Link>
+          <Link href="/login" className="sr-only on-hover on-tap">Войти <span aria-hidden="true">&rarr;</span></Link>
           <Link href="tel:+79993220033" className="flex gap-2 on-hover on-tap">
             <PhoneIcon className="h-6 w-6" aria-hidden="true" />
             8 999 322 00 33
