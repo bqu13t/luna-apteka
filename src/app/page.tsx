@@ -1,7 +1,12 @@
+import Header from "@/components/header/header"
+
 export default function Home() {
   return (
-    <main>
-      LunaFood.ru
-    </main>
+    <>
+      <Header />
+      <main>
+        LunaFood.ru
+      </main>
+    </>
   )
 }
