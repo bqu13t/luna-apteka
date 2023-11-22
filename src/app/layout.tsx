@@ -34,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body className={nunito.className}>{children}</body>
+      <body className={`${nunito.className} antialiased`}>{children}</body>
     </html>
   )
 }
