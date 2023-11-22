@@ -84,7 +84,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  row-gap: 1rem;
 
   color: rgb(var(--default-color-rgb));
   background:
@@ -107,6 +106,13 @@ body {
 
 .on-tap:active {
   transform: scale(0.9) skewY(-1deg) skewX(-1deg);
+}
+
+.current-path {
+  color: rgb(var(--white-font-rgb))!important;
+
+  background-size: 100% 100%!important;
+  opacity: 1;
 }
 
 .header {
@@ -150,7 +156,7 @@ body {
 
   padding: .5rem;
 
-  color: rgb(--var(--default-color-rgb));
+  color: rgb(var(--default-color-rgb));
   box-shadow: var(--box-shadow);
 
   border-radius: var(--border-radius);
@@ -327,7 +333,6 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 0% 0%;
-    
   }
 
   .header__nav__desktop-menu a:hover {
