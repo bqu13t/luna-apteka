@@ -27,7 +27,7 @@ export default function HomePagePopular() {
         />
         <div className="item-description">
           <h3 className="title">Пицца Барбекю</h3>
-          <p className="price">от 599 р</p>
+          <p className="price">849 ₽</p>
         </div>
       </li>
       <li className="main__popular__item">
@@ -42,7 +42,7 @@ export default function HomePagePopular() {
         />
         <div className="item-description">
           <h3 className="title">Пицца Делюкс</h3>
-          <p className="price">от 649 р</p>
+          <p className="price">849 ₽</p>
         </div>
       </li>
       <li className="main__popular__item">
@@ -57,7 +57,7 @@ export default function HomePagePopular() {
         />
         <div className="item-description">
           <h3 className="title">Острый Микс</h3>
-          <p className="price">от 749 р</p>
+          <p className="price">849 ₽</p>
         </div>
       </li>
       <li className="main__popular__item">
@@ -72,7 +72,7 @@ export default function HomePagePopular() {
         />
         <div className="item-description">
           <h3 className="title">Копченый ципленок</h3>
-          <p className="price">от 649 р</p>
+          <p className="price">849 ₽</p>
         </div>
       </li>
       <li className="main__popular__item">
@@ -87,7 +87,7 @@ export default function HomePagePopular() {
         />
         <div className="item-description">
           <h3 className="title">Пицца Манхэттен</h3>
-          <p className="price">от 649 р</p>
+          <p className="price">849 ₽</p>
         </div>
       </li>
     </ul>

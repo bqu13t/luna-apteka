@@ -856,9 +856,6 @@ body .map-container {
 .main__nav.is-pinned {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-
-  background-color: rgba(var(--bg-section-rgb),85%);
-  backdrop-filter: blur(1rem);
 }
 
 .main__nav__container {
@@ -884,7 +881,7 @@ body .map-container {
   height: 50px;
   margin-right: -58px;
 
-  transform: translateX(-58px) scale(0) skew(-45deg) rotate(-90deg);
+  transform: translateX(-58px);
   will-change: margin-right, transform;
   transition-property: all;
   transition-duration: 300ms;
@@ -901,7 +898,7 @@ body .map-container {
 .main__nav.is-pinned .main__nav__logo  {
   display: flex;
   margin-right: 0px;
-  transform: translateX(0px) scale(1) rotate(0deg);
+  transform: translateX(0px);
 }
 
 .main__nav__list {
@@ -1194,8 +1191,8 @@ body .map-container {
   position: fixed;
   top: 0;
   
-  background-color: rgba(var(--bg-section-rgb),75%);
-  backdrop-filter: blur(10px);
+  /* background-color: rgba(var(--bg-section-rgb),75%);
+  backdrop-filter: blur(10px); */
   z-index: 2;
 }
 
@@ -1230,8 +1227,7 @@ body .map-container {
 
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  background-color: rgba(var(--bg-section-rgb),75%);
-  backdrop-filter: blur(10px);
+  background-color: rgb(var(--bg-section-rgb));
 
   z-index: 2;
 }
@@ -1261,13 +1257,12 @@ body .map-container {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   box-shadow: var(--box-shadow);
-  background-color: rgba(var(--bg-section-rgb),100%);
+  background-color: rgb(var(--bg-section-rgb));
   z-index: 1;
 }
 
 .contacts-container ~ .footer {
-  background-color: rgba(var(--bg-section-rgb),75%);
-  backdrop-filter: blur(10px);
+  display: none;
   z-index: 2;
 }
 
@@ -1463,6 +1458,11 @@ body .map-container {
     margin-top: var(--margin);
   }
 
+  .main__nav.is-pinned {
+    background-color: rgba(var(--bg-section-rgb),85%);
+    backdrop-filter: blur(1rem);
+  }
+
   .main__popular {
     gap: var(--margin);
   }
@@ -1512,7 +1512,14 @@ body .map-container {
   }
 
   .contacts-container ~ .footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
     margin-top: 0;
+
+    min-height: auto;
+
+    z-index: 2;
   }
 }
 

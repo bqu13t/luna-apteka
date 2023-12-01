@@ -13,10 +13,10 @@ type ExtendedMap = CustomMap & {
 export default function Map() {
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const [lng, setLng] = useState(82.90264778179528);
-  const [lat, setLat] = useState(-50);
-  const [zoom, setZoom] = useState(0);
-  const [pitch, setPitch] = useState(45);
+  const [lng, setLng] = useState(82.90314555499413);
+  const [lat, setLat] = useState(90);
+  const [zoom, setZoom] = useState(3);
+  const [pitch, setPitch] = useState(40);
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function Map() {
         (map.current as ExtendedMap).setConfigProperty('basemap', 'showPointOfInterestLabels', false);
       }
       const popup = new mapboxgl.Popup({ closeOnClick: false, closeButton: false, anchor: 'bottom-right' })
-        .setLngLat([82.90264778179528, 55.065696780549416])
+        .setLngLat([82.90303531983233, 55.06584507569244])
         .setHTML('<img src="/luna.png" alt="пиццерия Лунафуд, Новосибирск, Дачная 60к14" width="25px" height="25px">')
         .addTo(map.current!);
       popup.addClassName('');
@@ -61,7 +61,7 @@ export default function Map() {
     function fly() {
       const offset = currentOffset({ screenWidth: window.innerWidth, screenHeight: window.innerHeight });
       map.current?.flyTo({
-        center: [82.90264778179528, 55.065696780549416],
+        center: [82.90303531983233, 55.06584507569244],
         essential: true,
         zoom: 16.2,
         duration: 15000,
