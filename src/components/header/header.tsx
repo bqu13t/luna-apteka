@@ -71,7 +71,7 @@ export default function Header() {
       </nav>
 
       <Dialog as="div" className="header__mobile-menu" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-        <div className="fixed inset-0 z-10" />
+        <div className="fixed inset-0 z-10" aria-hidden="true" />
         <Dialog.Panel className="header__mobile-menu__panel">
           <div className="header__mobile-menu__panel__header">
             <LogoSection onClick={() => setMobileMenuOpen(false)} />
@@ -81,29 +81,31 @@ export default function Header() {
             </button>
           </div>
           <div className="header__mobile-menu__panel__links">
-            <Link href="tel:+79993220033" className="section-mobile-menu-items on-hover on-tap">
-              <PhoneIcon className="mr-4 h-6 w-6" aria-hidden="true" />
-              8 999 322 00 33
+            <Link href="tel:+79993220033" className="link on-hover on-tap">
+              <PhoneIcon className="link__icon" aria-hidden="true" />
+              <span className="clipped-text font-bold">
+                8 999 322 00 33
+              </span>
             </Link>
-            <Link href="login" className="sr-only section-mobile-menu-items on-hover on-tap">
-              <ArrowRightCircleIcon className="mr-4 h-6 w-6" aria-hidden="true" />
+            <Link href="login" className="sr-only link on-hover on-tap">
+              <ArrowRightCircleIcon className="link__icon" aria-hidden="true" />
               <span className="block">Войти</span>
             </Link>
-            <Link href="promo" className="section-mobile-menu-items on-hover on-tap">
-              <RocketLaunchIcon className="mr-4 h-6 w-6" aria-hidden="true" />
+            <Link href="promo" className="link on-hover on-tap">
+              <RocketLaunchIcon className="link__icon" aria-hidden="true" />
               <span className="block">Акции</span>
             </Link>
-            <Link href="contacts" className="section-mobile-menu-items on-hover on-tap">
-              <MapPinIcon className="mr-4 h-6 w-6" aria-hidden="true" />
+            <Link href="contacts" className="link on-hover on-tap">
+              <MapPinIcon className="link__icon" aria-hidden="true" />
               <span className="block">Контакты</span>
             </Link>
-            <Link href="work" className="section-mobile-menu-items on-hover on-tap">
-              <UserGroupIcon className="mr-4 h-6 w-6" aria-hidden="true" />
+            <Link href="work" className="link on-hover on-tap">
+              <UserGroupIcon className="link__icon" aria-hidden="true" />
               <span className="block">Работа в ЛунаФуд</span>
             </Link>
             <Link href="about"
-              className="section-mobile-menu-items on-hover on-tap">
-              <MoonIcon className="mr-4 h-6 w-6" aria-hidden="true" />
+              className="link on-hover on-tap">
+              <MoonIcon className="link__icon" aria-hidden="true" />
               <span className="block">О нас</span>
             </Link>
           </div>

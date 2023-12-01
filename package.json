@@ -12,14 +12,21 @@
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "clsx": "^2.0.0",
+    "mapbox-gl": "^3.0.0-beta.1",
     "next": "14.0.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-cookie": "^6.1.1",
+    "react-dom": "^18",
+    "react-scroll": "^1.9.0",
+    "react-sticky-box": "^2.0.5",
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
+    "@types/mapbox-gl": "^2.7.19",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-scroll": "^1.8.10",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.3",

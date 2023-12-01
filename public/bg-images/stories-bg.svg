@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3000" height="236"
+   preserveAspectRatio="xMidYMid" viewBox="0 0 3000 236">
+   <style>
+      @keyframes l {
+         to {
+            transform: scale(.9) translateX(5%) translateY(5%)
+         }
+      }
+   </style>
+   <g transform="translate(1500,118) scale(1,1) translate(-1500,-118)">
+      <linearGradient id="lg-1" x1="0" x2="0" y1="0" y2="1">
+         <stop stop-color="#ff6762" offset="0"></stop>
+         <stop stop-color="#de3e6c" offset="0.33"></stop>
+         <stop stop-color="#992e6a" offset="0.67"></stop>
+         <stop stop-color="#612961" offset="1"></stop>
+      </linearGradient>
+      <path d="" fill="url(#lg-1)" opacity="0.4">
+         <animate attributeName="d" dur="15s" repeatCount="indefinite" keyTimes="0;0.333;0.667;1" calcmod="spline"
+            keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1" begin="0s"
+            values="M0 0M 0 204.5Q 375 214.6 750 206.8T 1500 202.4T 2250 199.1T 3000 200.4L 3000 34.3Q 2625 36.9 2250 36.6T 1500 23.2T 750 41.9T 0 27.7Z;M0 0M 0 208.9Q 375 204 750 199.3T 1500 214.3T 2250 203T 3000 213.4L 3000 26.5Q 2625 29 2250 22.9T 1500 25.5T 750 35.2T 0 36.3Z;M0 0M 0 209Q 375 223 750 216.9T 1500 203.4T 2250 201T 3000 197.2L 3000 23.2Q 2625 45.8 2250 40.6T 1500 32T 750 22.5T 0 22.2Z;M0 0M 0 204.5Q 375 214.6 750 206.8T 1500 202.4T 2250 199.1T 3000 200L 3000 34Q 2625 37 2250 37T 1500 23T 750 42T 0 27Z">
+         </animate>
+      </path>
+      <path d="" fill="url(#lg-1)" opacity="0.4">
+         <animate attributeName="d" dur="15s" repeatCount="indefinite" keyTimes="0;0.333;0.667;1" calcmod="spline"
+            keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1" begin="-2.5s"
+            values="M0 0M 0 207.9Q 375 211.2 750 208.6T 1500 214.4T 2250 217T 3000 214.8L 3000 22.9Q 2625 46.7 2250 38.2T 1500 31.8T 750 32T 0 32.2Z;M0 0M 0 202.9Q 375 213 750 205.2T 1500 198.1T 2250 196.2T 3000 195.6L 3000 40.5Q 2625 34.9 2250 28.6T 1500 25.5T 750 28.6T 0 27.9Z;M0 0M 0 208.3Q 375 194.7 750 194.4T 1500 205.2T 2250 210.6T 3000 201.9L 3000 40Q 2625 39.3 2250 38.5T 1500 21.7T 750 22.5T 0 35.4Z;M0 0M 0 207.9Q 375 211.2 750 208.6T 1500 214.4T 2250 217T 3000 214.8L 3000 22.9Q 2625 46.7 2250 38.2T 1500 31.8T 750 32T 0 32.2Z">
+         </animate>
+      </path>
+      <path d="" fill="url(#lg-1)" opacity="0.4">
+         <animate attributeName="d" dur="15s" repeatCount="indefinite" keyTimes="0;0.333;0.667;1" calcmod="spline"
+            keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1" begin="-5s"
+            values="M0 0M 0 197.5Q 375 210.4 750 200.7T 1500 212.9T 2250 215.5T 3000 204.7L 3000 25.3Q 2625 36.6 2250 27.6T 1500 28.1T 750 42.1T 0 28.8Z;M0 0M 0 198.2Q 375 201.5 750 201.3T 1500 210.4T 2250 208.4T 3000 211.9L 3000 38.5Q 2625 38.1 2250 34.6T 1500 26.4T 750 27.5T 0 34Z;M0 0M 0 215.5Q 375 200.7 750 197.6T 1500 194.8T 2250 201.7T 3000 210.8L 3000 34.9Q 2625 33.3 2250 30T 1500 36.8T 750 30T 0 20.2Z;M0 0M 0 197.5Q 375 210.4 750 200.7T 1500 212.93T 2250 215.5T 3000 204.7L 3000 25.3Q 2625 36.6 2250 27.6T 1500 28.1T 750 42.1T 0 28.7Z">
+         </animate>
+      </path>
+      <path d="" fill="url(#lg-1)" opacity="0.4">
+         <animate attributeName="d" dur="15s" repeatCount="indefinite" keyTimes="0;0.333;0.667;1" calcmod="spline"
+            keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1" begin="-7.5s"
+            values="M0 0M 0 214.9Q 375 216.2 750 206.2T 1500 194.9T 2250 205.4T 3000 196.7L 3000 19.5Q 2625 28.6 2250 26.4T 1500 20.4T 750 20.55T 0 22.2Z;M0 0M 0 207.8Q 375 205.5 750 203.4T 1500 203.2T 2250 211.2T 3000 213.2L 3000 34.8Q 2625 43.1 2250 39.6T 1500 23.3T 750 40.6T 0 31.9Z;M0 0M 0 211Q 375 209 750 201.5T 1500 194T 2250 200.3T 3000 214.2L 3000 31Q 2625 42.6 2250 39T 1500 39.7T 750 28.8T 0 34.03Z;M0 0M 0 214.9Q 375 216.2 750 206.2T 1500 194.9T 2250 205.4T 3000 196.7L 3000 19.5Q 2625 28.6 2250 26.4T 1500 20.4T 750 20.5T 0 22.2Z">
+         </animate>
+      </path>
+   </g>
+</svg>
