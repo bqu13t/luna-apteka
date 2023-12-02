@@ -5,7 +5,10 @@ import About from "@/components/about/about"
 import Footer from "@/components/footer/footer"
 
 export const metadata: Metadata = {
-  title: '🍕 О нас | Луна Фуд | Сеть пиццерий в Новосибирске'
+  title: '🍕 О нас | Луна Фуд | Сеть пиццерий в Новосибирске',
+  alternates: {
+    canonical: '/about'
+  },
 }
 
 export default function AboutPage() {

@@ -5,7 +5,10 @@ import Work from "@/components/work/work"
 import Footer from "@/components/footer/footer"
 
 export const metadata: Metadata = {
-  title: 'Работа в ЛунаФуд'
+  title: 'Работа в ЛунаФуд',
+  alternates: {
+    canonical: '/work'
+  },
 }
 
 export default function WorkPage() {
