@@ -13,12 +13,17 @@ export default function HomePageStoryModal({ id }: { id: string }) {
     ? parseInt(storyItem.content_img_height)
     : undefined;
 
+  const blurDataURL = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII='
+
   return (
     <div id={id} className="flex justify-center">
       <h3 className="sr-only">{title}</h3>
       <p className="sr-only">{description}</p>
       <Image
         className="rounded-xl story-img"
+        quality={60}
+        placeholder="blur"
+        blurDataURL={blurDataURL}
         src={content_img_src}
         width={content_img_width}
         height={content_img_height}

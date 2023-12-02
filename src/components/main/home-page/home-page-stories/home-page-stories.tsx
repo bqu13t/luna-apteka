@@ -9,7 +9,6 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 import storiesList from "@/db/stories/stories-list"
 import HomePageStoryModal from "@/components/main/home-page/home-page-stories/home-page-story-modal";
 
-
 export default function HomePageStories() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentModal, setCurrentModal] = useState<React.ReactNode | null>(
@@ -20,6 +19,8 @@ export default function HomePageStories() {
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [visitedItems, setVisitedItems] = useState<string[]>([]);
   const [cookies, setCookie] = useCookies(["visitedItems"]);
+
+  const blurDataURL = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII='
 
   useEffect(() => {
     if (cookies.visitedItems) {
@@ -88,6 +89,9 @@ export default function HomePageStories() {
 
               <Image
                 className="rounded-2xl object-cover"
+                quality={50}
+                placeholder="blur"
+                blurDataURL={blurDataURL}
                 src={title_img_src}
                 alt={title}
                 width={parseInt(title_img_width)}
