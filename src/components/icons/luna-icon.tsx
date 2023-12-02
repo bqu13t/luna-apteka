@@ -1,7 +1,7 @@
 export default function LunaIcon() {
   return (
-    <svg
-      className="min-h-[50px] min-w-[50px] drop-shadow-[-2px_0px_3px_rgba(0,0,0,.1)] dark:drop-shadow-[-2px_0px_3px_rgba(255,255,255,.1)]"
+    <svg width={50} height={50}
+      className="h-[50px] w-[50px] drop-shadow-[-2px_0px_3px_rgba(0,0,0,.1)] dark:drop-shadow-[-2px_0px_3px_rgba(255,255,255,.1)]"
       viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
       <path fill="#ff6762"
         className="brightness-100 dark:brightness-110"
