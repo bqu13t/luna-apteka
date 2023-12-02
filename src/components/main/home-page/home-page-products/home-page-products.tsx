@@ -11,6 +11,8 @@ import comboItems from "@/db/products/combo-items";
 import dessertItems from "@/db/products/desserts-items";
 
 export default function HomePageProducts() {
+  const blurDataURL = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII='
+
   return (
     <section className="main__cards">
       <section id="pizza" className="main__cards__group">
@@ -43,6 +45,9 @@ export default function HomePageProducts() {
                   {is_profit === true ? `${promo_title} ${Math.ceil((price / old_price - 1) * -100)}%` : `${promo_title}`}
                 </div>
                 <Image
+                  placeholder="blur"
+                  blurDataURL={blurDataURL}
+                  quality={50}
                   src={img_url}
                   width={150}
                   height={150}
@@ -98,6 +103,9 @@ export default function HomePageProducts() {
                   {is_profit === true ? `${promo_title} ${Math.round((price / old_price - 1) * -100)}%` : `${promo_title}`}
                 </div>
                 <Image
+                  placeholder="blur"
+                  blurDataURL={blurDataURL}
+                  quality={50}
                   src={img_url}
                   width={150}
                   height={150}
@@ -153,6 +161,9 @@ export default function HomePageProducts() {
                   {is_profit === true ? `${promo_title} ${Math.round((price / old_price - 1) * -100)}%` : `${promo_title}`}
                 </div>
                 <Image
+                  placeholder="blur"
+                  blurDataURL={blurDataURL}
+                  quality={50}
                   src={img_url}
                   width={150}
                   height={150}
@@ -204,6 +215,9 @@ export default function HomePageProducts() {
                   {is_profit === true ? `${promo_title} ${Math.round((price / old_price - 1) * -100)}%` : `${promo_title}`}
                 </div>
                 <Image
+                  placeholder="blur"
+                  blurDataURL={blurDataURL}
+                  quality={50}
                   src={img_url}
                   width={150}
                   height={150}
