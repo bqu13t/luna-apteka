@@ -662,6 +662,8 @@ body .map-container {
   width: 92px;
   height: 92px;
 
+  border-radius: var(--border-radius);
+
   filter: var(--drop-shadow);
 
   transition: all 0.3s ease-in-out;
