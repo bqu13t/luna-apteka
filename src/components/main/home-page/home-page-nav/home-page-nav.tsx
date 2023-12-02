@@ -57,6 +57,7 @@ export default function HomePageNav() {
           {navItems.map(({ id, to, name }) => (
             <li key={id}>
               <ScrollLink
+                href={`#${to}`}
                 to={to}
                 activeClass="active-link"
                 duration={500}
@@ -64,7 +65,8 @@ export default function HomePageNav() {
                 offset={-72}
                 spy={true}
               >
-                {name}
+                {`${name} `}
+                <span className='sr-only'>от пиццерии ЛунаФуд</span>
               </ScrollLink>
             </li>
           ))}
