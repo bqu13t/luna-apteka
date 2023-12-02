@@ -1,10 +1,12 @@
 import Image from "next/image"
 
 export default function HomePagePopular() {
+  const blurDataURL = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII='
+
   return (
     <ul className="main__popular">
       <li className="main__popular__item">
-        <svg viewBox="0 0 32 24" className="top5-icon">
+        <svg width={24} height={24} viewBox="0 0 32 24" className="top5-icon">
           <linearGradient id="lg-1" x1="0" x2="1" y1="0" y2="1">
             <stop stopColor="#ff6762" offset="0"></stop>
             <stop stopColor="#de3e6c" offset="1"></stop>
@@ -19,6 +21,9 @@ export default function HomePagePopular() {
         <p className="rate-number">1</p>
         <span className="rate-number-color">1</span>
         <Image
+          placeholder="blur"
+          blurDataURL={blurDataURL}
+          quality={50}
           className="item-image"
           src="/pizza-photo/bbq.png"
           width={100}
@@ -34,6 +39,9 @@ export default function HomePagePopular() {
         <p className="rate-number">2</p>
         <span className="rate-number-color">2</span>
         <Image
+          placeholder="blur"
+          blurDataURL={blurDataURL}
+          quality={50}
           className="item-image"
           src="/pizza-photo/deluxe.png"
           width={100}
@@ -49,6 +57,9 @@ export default function HomePagePopular() {
         <p className="rate-number">3</p>
         <span className="rate-number-color">3</span>
         <Image
+          placeholder="blur"
+          blurDataURL={blurDataURL}
+          quality={50}
           className="item-image drop-shadow-xl"
           src="/pizza-photo/spicy-mix.png"
           width={100}
@@ -64,6 +75,9 @@ export default function HomePagePopular() {
         <p className="rate-number">4</p>
         <span className="rate-number-color">4</span>
         <Image
+          placeholder="blur"
+          blurDataURL={blurDataURL}
+          quality={50}
           className="item-image"
           src="/pizza-photo/smoked-chicken.png"
           width={100}
@@ -79,6 +93,9 @@ export default function HomePagePopular() {
         <p className="rate-number">5</p>
         <span className="rate-number-color">5</span>
         <Image
+          placeholder="blur"
+          blurDataURL={blurDataURL}
+          quality={50}
           className="item-image"
           src="/pizza-photo/manhattan.png"
           width={100}
