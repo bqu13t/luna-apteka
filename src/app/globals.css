@@ -163,6 +163,12 @@ body {
     rgb(var(--bg-start-rgb));
 }
 
+.not-found-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 body .map-container {
   position: fixed;
   top: 0;
