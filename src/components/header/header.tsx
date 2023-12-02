@@ -32,7 +32,7 @@ export default function Header() {
           onClick={() => setMobileMenuOpen(true)}
         >
           <span className="sr-only">Открыть главное меню</span>
-          <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+          <Bars3Icon width={24} height={24} className="h-6 w-6" aria-hidden="true" />
         </button>
 
         <Popover.Group className="header__nav__desktop-menu">
@@ -64,7 +64,7 @@ export default function Header() {
         <div className="header__nav__desktop-menu">
           <Link href="/login" className="sr-only on-hover on-tap">Войти <span aria-hidden="true">&rarr;</span></Link>
           <Link href="tel:+79993220033" className="flex gap-2 on-hover on-tap">
-            <PhoneIcon className="h-6 w-6" aria-hidden="true" />
+            <PhoneIcon width={24} height={24} className="h-6 w-6" aria-hidden="true" />
             8 999 322 00 33
           </Link>
         </div>
