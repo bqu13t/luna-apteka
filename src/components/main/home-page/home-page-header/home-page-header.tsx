@@ -4,13 +4,7 @@ import { PhoneIcon, MapPinIcon } from "@heroicons/react/24/solid"
 export default function HomePageHeader() {
   return (
     <header className="main__header">
-      <h1>
-        Доставка{' '}
-        <span className="clipped-text">
-          пиццы
-        </span>
-        {' '}в Новосибирске
-      </h1>
+      <h1>Доставка пиццы в Новосибирске</h1>
       <p className="main__header__description">
         Закажите бесплатную доставку пиццы по телефону или в нашей пиццерии
       </p>
