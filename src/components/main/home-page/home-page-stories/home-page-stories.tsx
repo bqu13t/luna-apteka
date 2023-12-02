@@ -90,7 +90,6 @@ export default function HomePageStories() {
                 className="rounded-2xl object-cover"
                 src={title_img_src}
                 alt={title}
-                priority={true}
                 width={parseInt(title_img_width)}
                 height={parseInt(title_img_height)}
               />
