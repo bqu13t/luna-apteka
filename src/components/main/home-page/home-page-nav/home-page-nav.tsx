@@ -14,7 +14,6 @@ export default function HomePageNav() {
       const navList = document.querySelector('.home-page .main__nav__list')
       const activeLink = nav?.querySelector('.active-link')
       const navPosition = nav?.getBoundingClientRect()
-      console.log(navPosition?.top)
 
       if (navPosition && nav && navList) {
         if (navPosition!.top < 1 && !nav!.classList.contains('is-pinned')) {
