@@ -28,6 +28,9 @@ export const metadata: Metadata = {
     ],
   },
   metadataBase: new URL("https://lunafood.ru"),
+  alternates: {
+    canonical: '/'
+  },
 }
 
 export default function RootLayout({

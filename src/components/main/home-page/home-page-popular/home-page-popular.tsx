@@ -26,7 +26,7 @@ export default function HomePagePopular() {
           alt="Пицца Барбекю"
         />
         <div className="item-description">
-          <h3 className="title">Пицца Барбекю</h3>
+          <h3 className="title">Барбекю</h3>
           <p className="price">849 ₽</p>
         </div>
       </li>
@@ -41,8 +41,8 @@ export default function HomePagePopular() {
           alt="Пицца Делюкс"
         />
         <div className="item-description">
-          <h3 className="title">Пицца Делюкс</h3>
-          <p className="price">849 ₽</p>
+          <h3 className="title">Делюкс</h3>
+          <p className="price">859 ₽</p>
         </div>
       </li>
       <li className="main__popular__item">
@@ -53,7 +53,7 @@ export default function HomePagePopular() {
           src="/pizza-photo/spicy-mix.png"
           width={100}
           height={100}
-          alt="Острый Микс"
+          alt="Пицца Острый Микс"
         />
         <div className="item-description">
           <h3 className="title">Острый Микс</h3>
@@ -83,10 +83,10 @@ export default function HomePagePopular() {
           src="/pizza-photo/manhattan.png"
           width={100}
           height={100}
-          alt="Пицца Делюкс"
+          alt="Пицца Манхэттен"
         />
         <div className="item-description">
-          <h3 className="title">Пицца Манхэттен</h3>
+          <h3 className="title">Манхэттен</h3>
           <p className="price">849 ₽</p>
         </div>
       </li>
