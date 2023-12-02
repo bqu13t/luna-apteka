@@ -7,21 +7,12 @@ export default function Contacts() {
         Номер телефона пиццерии в Новосибирск — адреса ресторанов рядом со мной на карте, часы работы ЛунаФуд
       </h1>
       <div className="contacts-header__contacts">
-
-        {/* <div className="contact-section">
-              <div className="contact">
-                <span className="title">Станция метро</span>
-                <p className="value">Заельцовская</p>
-              </div>
-            </div> */}
-
         <div className="contact-section">
           <div className="contact">
             <span className="title">Адрес</span>
             <p className="value">Дачная 60к14</p>
           </div>
         </div>
-
         <div className="contact-section">
           <div className="contact">
             <span className="title">Телефон</span>
