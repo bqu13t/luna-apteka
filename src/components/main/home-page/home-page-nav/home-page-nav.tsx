@@ -69,11 +69,10 @@ export default function HomePageNav() {
                 activeClass="active-link"
                 duration={500}
                 smooth={true}
-                offset={-72}
+                offset={-55}
                 spy={true}
               >
-                {`${name} `}
-                <span className="sr-only">от пиццерии ЛунаФуд</span>
+                {`${name}`}
               </ScrollLink>
             </li>
           ))}
