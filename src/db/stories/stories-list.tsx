@@ -13,6 +13,18 @@ type StoryItem = {
 
 const storiesList: StoryItem[] = [
   {
+    id: "story-0",
+    linkName: "В ожидании заказа)",
+    title: "Когда думаешь что курьер что-то напутал",
+    description: "Космонавт на Луне смотрит на пиццу пепперони",
+    title_img_src: "/stories/titles/astronauts-with-pizza-title.png",
+    title_img_width: "90",
+    title_img_height: "135",
+    content_img_src: "/stories/content/astronauts-with-pizza.png",
+    content_img_width: "360",
+    content_img_height: "540",
+  },
+  {
     id: "story-1",
     linkName: "история 1",
     title: "Зимой хочется тепла",
