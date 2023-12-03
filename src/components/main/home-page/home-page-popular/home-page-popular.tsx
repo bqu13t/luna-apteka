@@ -24,6 +24,7 @@ export default function HomePagePopular() {
           placeholder="blur"
           blurDataURL={blurDataURL}
           quality={50}
+          priority={true}
           className="item-image"
           src="/pizza-photo/bbq.png"
           width={100}
@@ -42,6 +43,7 @@ export default function HomePagePopular() {
           placeholder="blur"
           blurDataURL={blurDataURL}
           quality={50}
+          priority={true}
           className="item-image"
           src="/pizza-photo/deluxe.png"
           width={100}
@@ -60,6 +62,7 @@ export default function HomePagePopular() {
           placeholder="blur"
           blurDataURL={blurDataURL}
           quality={50}
+          priority={true}
           className="item-image drop-shadow-xl"
           src="/pizza-photo/spicy-mix.png"
           width={100}
@@ -78,6 +81,7 @@ export default function HomePagePopular() {
           placeholder="blur"
           blurDataURL={blurDataURL}
           quality={50}
+          priority={true}
           className="item-image"
           src="/pizza-photo/smoked-chicken.png"
           width={100}
@@ -96,6 +100,7 @@ export default function HomePagePopular() {
           placeholder="blur"
           blurDataURL={blurDataURL}
           quality={50}
+          priority={true}
           className="item-image"
           src="/pizza-photo/manhattan.png"
           width={100}

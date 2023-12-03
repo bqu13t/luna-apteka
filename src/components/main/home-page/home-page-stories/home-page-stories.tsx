@@ -90,6 +90,7 @@ export default function HomePageStories() {
               <Image
                 className="rounded-2xl object-cover"
                 quality={50}
+                priority={true}
                 placeholder="blur"
                 blurDataURL={blurDataURL}
                 src={title_img_src}
