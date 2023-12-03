@@ -18,7 +18,7 @@ export default function ContactsPage() {
   return (
     <>
       <Map />
-      <MapHider />
+      {/* <MapHider /> */}
       <div className="contacts-container">
         <Header />
         <Contacts />
