@@ -16,10 +16,10 @@ export default function HomePageNav() {
       const navPosition = nav?.getBoundingClientRect();
 
       if (navPosition && nav && navList) {
-        if (navPosition!.top < 1 && !nav!.classList.contains("is-pinned")) {
+        if (navPosition!.top <= 0 && !nav!.classList.contains("is-pinned")) {
           nav!.classList.add("is-pinned");
         } else if (
-          navPosition!.top >= 1 &&
+          navPosition!.top > 0 &&
           nav!.classList.contains("is-pinned")
         ) {
           nav!.classList.remove("is-pinned");
@@ -58,6 +58,7 @@ export default function HomePageNav() {
           onClick={scrollToTop}
         >
           <LunaIcon />
+          <span className="sr-only">Вернуться на главную страницу Луна Фуд</span>
         </Link>
         <ul className="main__nav__list">
           {navItems.map(({ id, to, name }) => (
