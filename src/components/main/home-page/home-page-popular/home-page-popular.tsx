@@ -1,7 +1,29 @@
-import Image from "next/image"
+"use client";
+
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import topRateItems from "@/db/top-rate-products/top-rate-products";
 
 export default function HomePagePopular() {
-  const blurDataURL = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII='
+  const [screenWidth, setScreenWidth] = useState(0);
+  const mobilePriorityImagesCount = 2;
+  const desktopPriorityImagesCount = 5;
+  const blurDataURL =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII=";
+
+  useEffect(() => {
+    setScreenWidth(window.innerWidth);
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const priorityImagesCount =
+    screenWidth < 640 ? mobilePriorityImagesCount : desktopPriorityImagesCount;
 
   return (
     <ul className="main__popular">
@@ -11,107 +33,35 @@ export default function HomePagePopular() {
             <stop stopColor="#ff6762" offset="0"></stop>
             <stop stopColor="#de3e6c" offset="1"></stop>
           </linearGradient>
-          <path fill="url(#lg-1)"
-            d="M15.66.033a1.924 1.976 0 00-1.186.734L9.141 7.782a.32.32 0 01-.36.11l-6.16-2.438a1.932 1.984 0 00-2.557 2.36L3.776 22.5A1.94 1.992 0 005.585 24h20.773a1.94 1.992 0 001.872-1.5L31.94 7.814a1.948 2 0 00-2.573-2.36l-6.145 2.438a.32.32 0 01-.358-.11L17.53.767A1.924 1.976 0 0015.66.033z" />
+          <path
+            fill="url(#lg-1)"
+            d="M15.66.033a1.924 1.976 0 00-1.186.734L9.141 7.782a.32.32 0 01-.36.11l-6.16-2.438a1.932 1.984 0 00-2.557 2.36L3.776 22.5A1.94 1.992 0 005.585 24h20.773a1.94 1.992 0 001.872-1.5L31.94 7.814a1.948 2 0 00-2.573-2.36l-6.145 2.438a.32.32 0 01-.358-.11L17.53.767A1.924 1.976 0 0015.66.033z"
+          />
         </svg>
         <h2>Топ 5</h2>
         <p>за 30 дней</p>
       </li>
-      <li className="main__popular__item">
-        <p className="rate-number">1</p>
-        <span className="rate-number-color">1</span>
-        <Image
-          placeholder="blur"
-          blurDataURL={blurDataURL}
-          quality={50}
-          priority={true}
-          className="item-image"
-          src="/pizza-photo/bbq.png"
-          width={100}
-          height={100}
-          alt="Пицца Барбекю"
-        />
-        <div className="item-description">
-          <h3 className="title">Барбекю</h3>
-          <p className="price">849 ₽</p>
-        </div>
-      </li>
-      <li className="main__popular__item">
-        <p className="rate-number">2</p>
-        <span className="rate-number-color">2</span>
-        <Image
-          placeholder="blur"
-          blurDataURL={blurDataURL}
-          quality={50}
-          priority={true}
-          className="item-image"
-          src="/pizza-photo/deluxe.png"
-          width={100}
-          height={100}
-          alt="Пицца Делюкс"
-        />
-        <div className="item-description">
-          <h3 className="title">Делюкс</h3>
-          <p className="price">859 ₽</p>
-        </div>
-      </li>
-      <li className="main__popular__item">
-        <p className="rate-number">3</p>
-        <span className="rate-number-color">3</span>
-        <Image
-          placeholder="blur"
-          blurDataURL={blurDataURL}
-          quality={50}
-          priority={true}
-          className="item-image drop-shadow-xl"
-          src="/pizza-photo/spicy-mix.png"
-          width={100}
-          height={100}
-          alt="Пицца Острый Микс"
-        />
-        <div className="item-description">
-          <h3 className="title">Острый Микс</h3>
-          <p className="price">849 ₽</p>
-        </div>
-      </li>
-      <li className="main__popular__item">
-        <p className="rate-number">4</p>
-        <span className="rate-number-color">4</span>
-        <Image
-          placeholder="blur"
-          blurDataURL={blurDataURL}
-          quality={50}
-          priority={true}
-          className="item-image"
-          src="/pizza-photo/smoked-chicken.png"
-          width={100}
-          height={100}
-          alt="Пицца Копченый ципленок"
-        />
-        <div className="item-description">
-          <h3 className="title">Копченый ципленок</h3>
-          <p className="price">849 ₽</p>
-        </div>
-      </li>
-      <li className="main__popular__item">
-        <p className="rate-number">5</p>
-        <span className="rate-number-color">5</span>
-        <Image
-          placeholder="blur"
-          blurDataURL={blurDataURL}
-          quality={50}
-          priority={true}
-          className="item-image"
-          src="/pizza-photo/manhattan.png"
-          width={100}
-          height={100}
-          alt="Пицца Манхэттен"
-        />
-        <div className="item-description">
-          <h3 className="title">Манхэттен</h3>
-          <p className="price">849 ₽</p>
-        </div>
-      </li>
+      {topRateItems.map(({ id, name, price, top_rate, img_url }, index) => (
+        <li key={`top-${id}`} className="main__popular__item">
+          <p className="rate-number">{top_rate}</p>
+          <span className="rate-number-color">{top_rate}</span>
+          <Image
+            placeholder="blur"
+            blurDataURL={blurDataURL}
+            quality={50}
+            priority={index < priorityImagesCount ? true : false}
+            className="item-image"
+            src={img_url}
+            width={100}
+            height={100}
+            alt={name}
+          />
+          <div className="item-description">
+            <h3 className="title">{`Пицца ${name}`}</h3>
+            <p className="price">{price} ₽</p>
+          </div>
+        </li>
+      ))}
     </ul>
-  )
+  );
 }
