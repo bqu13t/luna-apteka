@@ -1,69 +1,67 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import { Fragment, useState, useEffect } from "react";
-import { useCookies } from "react-cookie";
-import { Dialog, Transition } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/solid";
+import Image from "next/image"
+import { Fragment, useState, useEffect } from "react"
+import { useCookies } from "react-cookie"
+import { Dialog, Transition } from "@headlessui/react"
+import { XMarkIcon } from "@heroicons/react/24/solid"
 
-import storiesList from "@/db/stories/stories-list";
-import HomePageStoryModal from "@/components/main/home-page/home-page-stories/home-page-story-modal";
+import storiesList from "@/db/stories/stories-list"
+import HomePageStoryModal from "@/components/main/home-page/home-page-stories/home-page-story-modal"
 
 export default function HomePageStories() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [currentModal, setCurrentModal] = useState<React.ReactNode | null>(
-    null,
-  );
-  const [progress, setProgress] = useState(0);
-  const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
-  const [isMouseDown, setIsMouseDown] = useState(false);
-  const [visitedItems, setVisitedItems] = useState<string[]>([]);
-  const [cookies, setCookie] = useCookies(["visitedItems"]);
+  const [isOpen, setIsOpen] = useState(false)
+  const [currentModal, setCurrentModal] = useState<React.ReactNode | null>(null)
+  const [progress, setProgress] = useState(0)
+  const [timer, setTimer] = useState<NodeJS.Timeout | null>(null)
+  const [isMouseDown, setIsMouseDown] = useState(false)
+  const [visitedItems, setVisitedItems] = useState<string[]>([])
+  const [cookies, setCookie] = useCookies(["visitedItems"])
 
   const blurDataURL =
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII=";
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII="
 
   useEffect(() => {
     if (cookies.visitedItems) {
-      setVisitedItems(cookies.visitedItems);
+      setVisitedItems(cookies.visitedItems)
     }
-  }, [cookies.visitedItems]);
+  }, [cookies.visitedItems])
 
   function handleItemClick(itemId: string) {
     if (!visitedItems.includes(itemId)) {
-      const newVisitedItems = [...visitedItems, itemId];
-      setVisitedItems(newVisitedItems);
-      setCookie("visitedItems", newVisitedItems, { path: "/" });
+      const newVisitedItems = [...visitedItems, itemId]
+      setVisitedItems(newVisitedItems)
+      setCookie("visitedItems", newVisitedItems, { path: "/" })
     }
   }
 
   useEffect(() => {
     const newTimer = setInterval(() => {
       if (!isMouseDown) {
-        setProgress((prevProgress) => prevProgress + 0.01);
+        setProgress((prevProgress) => prevProgress + 0.01)
       }
-    }, 10);
+    }, 10)
 
-    setTimer(newTimer);
+    setTimer(newTimer)
 
     if (progress >= 10) {
-      clearInterval(newTimer);
-      closeModal();
+      clearInterval(newTimer)
+      closeModal()
     }
 
     return () => {
-      clearInterval(newTimer);
-    };
-  }, [progress, isMouseDown]);
+      clearInterval(newTimer)
+    }
+  }, [progress, isMouseDown])
 
   function closeModal() {
-    setIsOpen(false);
+    setIsOpen(false)
   }
 
   function openModal(modal: React.ReactNode) {
-    setCurrentModal(modal);
-    setIsOpen(true);
-    setProgress(0);
+    setCurrentModal(modal)
+    setIsOpen(true)
+    setProgress(0)
   }
 
   return (
@@ -82,8 +80,8 @@ export default function HomePageStories() {
                 key={id}
                 className="main__stories__story relative"
                 onClick={() => {
-                  openModal(<HomePageStoryModal id={id} />);
-                  handleItemClick(id);
+                  openModal(<HomePageStoryModal id={id} />)
+                  handleItemClick(id)
                 }}
               >
                 <div
@@ -109,7 +107,7 @@ export default function HomePageStories() {
                   height={parseInt(title_img_height)}
                 />
               </li>
-            ),
+            )
           )}
         </ul>
         <Transition appear show={isOpen} as={Fragment}>
@@ -150,5 +148,5 @@ export default function HomePageStories() {
         </Transition>
       </div>
     </div>
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { PhoneIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import Link from "next/link"
+import { PhoneIcon, MapPinIcon } from "@heroicons/react/24/solid"
 
 export default function HomePageHeader() {
   return (
@@ -52,5 +52,5 @@ export default function HomePageHeader() {
         </div>
       </div>
     </header>
-  );
+  )
 }

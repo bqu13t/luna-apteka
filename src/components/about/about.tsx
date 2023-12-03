@@ -4,5 +4,5 @@ export default function About() {
       <h1>О пиццерии ЛунаФуд</h1>
       <p className="main__header__description">Страница в разработке</p>
     </main>
-  );
+  )
 }

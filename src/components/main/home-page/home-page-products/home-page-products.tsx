@@ -1,18 +1,18 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import clsx from "clsx";
+import Image from "next/image"
+import clsx from "clsx"
 
-import LineThrough from "@/components/icons/line-through";
+import LineThrough from "@/components/icons/line-through"
 
-import pizzaItems from "@/db/products/pizza-items";
-import drinkItems from "@/db/products/drink-items";
-import comboItems from "@/db/products/combo-items";
-import dessertItems from "@/db/products/desserts-items";
+import pizzaItems from "@/db/products/pizza-items"
+import drinkItems from "@/db/products/drink-items"
+import comboItems from "@/db/products/combo-items"
+import dessertItems from "@/db/products/desserts-items"
 
 export default function HomePageProducts() {
   const blurDataURL =
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII=";
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII="
 
   return (
     <section className="main__cards">
@@ -47,7 +47,7 @@ export default function HomePageProducts() {
                   >
                     {is_profit === true
                       ? `${promo_title} ${Math.ceil(
-                          (price / old_price - 1) * -100,
+                          (price / old_price - 1) * -100
                         )}%`
                       : `${promo_title}`}
                   </div>
@@ -77,7 +77,7 @@ export default function HomePageProducts() {
                   </div>
                 </div>
               </li>
-            ),
+            )
           )}
         </ul>
       </section>
@@ -113,7 +113,7 @@ export default function HomePageProducts() {
                   >
                     {is_profit === true
                       ? `${promo_title} ${Math.round(
-                          (price / old_price - 1) * -100,
+                          (price / old_price - 1) * -100
                         )}%`
                       : `${promo_title}`}
                   </div>
@@ -143,7 +143,7 @@ export default function HomePageProducts() {
                   </div>
                 </div>
               </li>
-            ),
+            )
           )}
         </ul>
       </section>
@@ -179,7 +179,7 @@ export default function HomePageProducts() {
                   >
                     {is_profit === true
                       ? `${promo_title} ${Math.round(
-                          (price / old_price - 1) * -100,
+                          (price / old_price - 1) * -100
                         )}%`
                       : `${promo_title}`}
                   </div>
@@ -209,7 +209,7 @@ export default function HomePageProducts() {
                   </div>
                 </div>
               </li>
-            ),
+            )
           )}
         </ul>
       </section>
@@ -241,7 +241,7 @@ export default function HomePageProducts() {
                   >
                     {is_profit === true
                       ? `${promo_title} ${Math.round(
-                          (price / old_price - 1) * -100,
+                          (price / old_price - 1) * -100
                         )}%`
                       : `${promo_title}`}
                   </div>
@@ -261,10 +261,10 @@ export default function HomePageProducts() {
                   <p className="price">{`${price} ₽`}</p>
                 </div>
               </li>
-            ),
+            )
           )}
         </ul>
       </section>
     </section>
-  );
+  )
 }

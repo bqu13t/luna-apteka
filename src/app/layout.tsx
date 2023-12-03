@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from "next"
+import { Nunito } from "next/font/google"
+import "./globals.css"
 
 const nunito = Nunito({
   subsets: ["cyrillic", "latin"],
   weight: ["400", "700"],
-});
+})
 
 export const metadata: Metadata = {
   title: {
@@ -36,16 +36,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="ru">
       <body className={`${nunito.className} antialiased`}>{children}</body>
     </html>
-  );
+  )
 }

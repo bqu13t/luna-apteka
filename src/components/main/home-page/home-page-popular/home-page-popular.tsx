@@ -1,29 +1,29 @@
-"use client";
+"use client"
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import topRateItems from "@/db/top-rate-products/top-rate-products";
+import { useEffect, useState } from "react"
+import Image from "next/image"
+import topRateItems from "@/db/top-rate-products/top-rate-products"
 
 export default function HomePagePopular() {
-  const [screenWidth, setScreenWidth] = useState(0);
-  const mobilePriorityImagesCount = 2;
-  const desktopPriorityImagesCount = 5;
+  const [screenWidth, setScreenWidth] = useState(0)
+  const mobilePriorityImagesCount = 2
+  const desktopPriorityImagesCount = 5
   const blurDataURL =
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII=";
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII="
 
   useEffect(() => {
-    setScreenWidth(window.innerWidth);
+    setScreenWidth(window.innerWidth)
     const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-    window.addEventListener("resize", handleResize);
+      setScreenWidth(window.innerWidth)
+    }
+    window.addEventListener("resize", handleResize)
     return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
 
   const priorityImagesCount =
-    screenWidth < 640 ? mobilePriorityImagesCount : desktopPriorityImagesCount;
+    screenWidth < 640 ? mobilePriorityImagesCount : desktopPriorityImagesCount
 
   return (
     <ul className="main__popular">
@@ -63,5 +63,5 @@ export default function HomePagePopular() {
         </li>
       ))}
     </ul>
-  );
+  )
 }

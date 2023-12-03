@@ -1,53 +1,53 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
-import { useEffect } from "react";
+import Link from "next/link"
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll"
+import { useEffect } from "react"
 
-import LunaIcon from "@/components/icons/luna-icon";
-import navItems from "@/db/navbar/navbar-items";
+import LunaIcon from "@/components/icons/luna-icon"
+import navItems from "@/db/navbar/navbar-items"
 
 export default function HomePageNav() {
   useEffect(() => {
     const handleScroll = () => {
-      const nav = document.querySelector(".home-page .main__nav");
-      const navList = document.querySelector(".home-page .main__nav__list");
-      const activeLink = nav?.querySelector(".active-link");
-      const navPosition = nav?.getBoundingClientRect();
+      const nav = document.querySelector(".home-page .main__nav")
+      const navList = document.querySelector(".home-page .main__nav__list")
+      const activeLink = nav?.querySelector(".active-link")
+      const navPosition = nav?.getBoundingClientRect()
 
       if (navPosition && nav && navList) {
-        if (navPosition!.top <= 0 && !nav!.classList.contains("is-pinned")) {
-          nav!.classList.add("is-pinned");
+        if (navPosition!.top <= 1 && !nav!.classList.contains("is-pinned")) {
+          nav!.classList.add("is-pinned")
         } else if (
-          navPosition!.top > 0 &&
+          navPosition!.top > 1 &&
           nav!.classList.contains("is-pinned")
         ) {
-          nav!.classList.remove("is-pinned");
+          nav!.classList.remove("is-pinned")
         }
 
         if (activeLink) {
-          const navRect = navList!.getBoundingClientRect();
-          const linkRect = activeLink.getBoundingClientRect();
+          const navRect = navList!.getBoundingClientRect()
+          const linkRect = activeLink.getBoundingClientRect()
 
           if (linkRect.left < navRect.left) {
-            navList!.scrollLeft -= navRect.left - linkRect.left;
+            navList!.scrollLeft -= navRect.left - linkRect.left
           } else if (linkRect.right > navRect.right) {
-            navList!.scrollLeft += linkRect.right - navRect.right;
+            navList!.scrollLeft += linkRect.right - navRect.right
           }
         }
       }
-    };
+    }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll)
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   const scrollToTop = () => {
-    scroll.scrollToTop();
-  };
+    scroll.scrollToTop()
+  }
 
   return (
     <nav className="main__nav">
@@ -58,7 +58,9 @@ export default function HomePageNav() {
           onClick={scrollToTop}
         >
           <LunaIcon />
-          <span className="sr-only">Вернуться на главную страницу Луна Фуд</span>
+          <span className="sr-only">
+            Вернуться на главную страницу Луна Фуд
+          </span>
         </Link>
         <ul className="main__nav__list">
           {navItems.map(({ id, to, name }) => (
@@ -79,5 +81,5 @@ export default function HomePageNav() {
         </ul>
       </div>
     </nav>
-  );
+  )
 }

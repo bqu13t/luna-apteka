@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/link"
 
 export default function Contacts() {
   return (
@@ -36,5 +36,5 @@ export default function Contacts() {
         </div>
       </div>
     </main>
-  );
+  )
 }

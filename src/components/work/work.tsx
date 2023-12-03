@@ -4,5 +4,5 @@ export default function Work() {
       <h1>Работа в пиццерии ЛунаФуд</h1>
       <p className="main__header__description">Страница в разработке</p>
     </main>
-  );
+  )
 }

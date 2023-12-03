@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Dialog, Popover } from "@headlessui/react";
-import { useState, useRef } from "react";
-import clsx from "clsx";
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { Dialog, Popover } from "@headlessui/react"
+import { useState, useRef } from "react"
+import clsx from "clsx"
 import {
   Bars3Icon,
   XMarkIcon,
@@ -14,13 +14,13 @@ import {
   MapPinIcon,
   UserGroupIcon,
   PhoneIcon,
-} from "@heroicons/react/24/solid";
+} from "@heroicons/react/24/solid"
 
-import LogoSection from "@/components/header/header-nav/logo-section";
+import LogoSection from "@/components/header/header-nav/logo-section"
 
 export default function Header() {
-  const pathName = usePathname();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathName = usePathname()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <header className="header">
@@ -138,5 +138,5 @@ export default function Header() {
         </Dialog.Panel>
       </Dialog>
     </header>
-  );
+  )
 }

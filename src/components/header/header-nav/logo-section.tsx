@@ -1,8 +1,8 @@
-import Link from "next/link";
-import LunaLogo from "@/components/icons/luna-logo";
+import Link from "next/link"
+import LunaLogo from "@/components/icons/luna-logo"
 
 interface LogoSectionProps {
-  onClick: () => void;
+  onClick: () => void
 }
 
 export default function LogoSection({ onClick }: LogoSectionProps) {
@@ -11,5 +11,5 @@ export default function LogoSection({ onClick }: LogoSectionProps) {
       <span className="sr-only">Открыть главную страницу Луна Фуд</span>
       <LunaLogo />
     </Link>
-  );
+  )
 }

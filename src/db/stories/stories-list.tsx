@@ -1,15 +1,15 @@
 type StoryItem = {
-  id: string;
-  linkName: string;
-  title: string;
-  description: string;
-  title_img_src: string;
-  title_img_width: string;
-  title_img_height: string;
-  content_img_src: string;
-  content_img_width: string;
-  content_img_height: string;
-};
+  id: string
+  linkName: string
+  title: string
+  description: string
+  title_img_src: string
+  title_img_width: string
+  title_img_height: string
+  content_img_src: string
+  content_img_width: string
+  content_img_height: string
+}
 
 const storiesList: StoryItem[] = [
   {
@@ -108,6 +108,6 @@ const storiesList: StoryItem[] = [
     content_img_width: "360",
     content_img_height: "540",
   },
-];
+]
 
-export default storiesList;
+export default storiesList

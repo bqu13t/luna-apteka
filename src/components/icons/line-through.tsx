@@ -15,5 +15,5 @@ export default function LineThrough() {
         strokeWidth="2"
       />
     </svg>
-  );
+  )
 }

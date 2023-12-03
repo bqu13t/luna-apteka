@@ -1,15 +1,15 @@
 type DrinkItem = {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  is_promo: boolean;
-  is_new: boolean;
-  is_profit: boolean;
-  old_price: number;
-  promo_title: string;
-  img_url: string;
-};
+  id: string
+  name: string
+  description: string
+  price: number
+  is_promo: boolean
+  is_new: boolean
+  is_profit: boolean
+  old_price: number
+  promo_title: string
+  img_url: string
+}
 
 const drinkItems: DrinkItem[] = [
   {
@@ -156,6 +156,6 @@ const drinkItems: DrinkItem[] = [
     promo_title: "",
     img_url: "/drinks-photo/bonaqua.png",
   },
-];
+]
 
-export default drinkItems;
+export default drinkItems
