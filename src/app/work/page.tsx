@@ -1,15 +1,15 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import Header from "@/components/header/header"
-import Work from "@/components/work/work"
-import Footer from "@/components/footer/footer"
+import Header from "@/components/header/header";
+import Work from "@/components/work/work";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  title: 'Работа в ЛунаФуд',
+  title: "Работа в ЛунаФуд",
   alternates: {
-    canonical: '/work'
+    canonical: "/work",
   },
-}
+};
 
 export default function WorkPage() {
   return (
@@ -18,5 +18,5 @@ export default function WorkPage() {
       <Work />
       <Footer />
     </>
-  )
+  );
 }

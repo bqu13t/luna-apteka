@@ -1,14 +1,14 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import Header from "@/components/header/header"
-import Footer from "@/components/footer/footer"
+import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  title: 'Войти в личный кабинет',
+  title: "Войти в личный кабинет",
   alternates: {
-    canonical: '/login'
+    canonical: "/login",
   },
-}
+};
 
 export default function LoginPage() {
   return (
@@ -18,5 +18,5 @@ export default function LoginPage() {
       <h2>Войти в личный кабинет</h2>
       <Footer />
     </>
-  )
+  );
 }

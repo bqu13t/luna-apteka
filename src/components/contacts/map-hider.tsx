@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useState, useEffect } from "react";
 
@@ -7,13 +7,11 @@ export default function MapHider() {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setHidden(true)
-    }, 15000)
+      setHidden(true);
+    }, 15000);
     return () => {
-      clearTimeout(timeout)
-    }
-  }, [])
-  return (
-    <div className={`map-block ${hidden ? 'hidden' : ''}`}></div>
-  )
+      clearTimeout(timeout);
+    };
+  }, []);
+  return <div className={`map-block ${hidden ? "hidden" : ""}`}></div>;
 }

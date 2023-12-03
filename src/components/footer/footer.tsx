@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -23,17 +23,11 @@ export default function Footer() {
       <section className="footer__links">
         <h2 className="font-bold">Контакты</h2>
         <ul>
-          <li>
-            Метро: Заельцовская
-          </li>
-          <li>
-            Адрес: Новосибирск, ул. Дачная 60к14, ТЦ, 1 этаж
-          </li>
-          <li>
-            тел: 8 999 322 00 33
-          </li>
+          <li>Метро: Заельцовская</li>
+          <li>Адрес: Новосибирск, ул. Дачная 60к14, ТЦ, 1 этаж</li>
+          <li>тел: 8 999 322 00 33</li>
         </ul>
       </section>
     </footer>
-  )
+  );
 }

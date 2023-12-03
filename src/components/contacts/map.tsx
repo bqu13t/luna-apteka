@@ -1,13 +1,18 @@
-'use client'
+"use client";
 
-import React, { useRef, useEffect, useState } from 'react';
-import mapboxgl, { Map as CustomMap } from 'mapbox-gl';
+import React, { useRef, useEffect, useState } from "react";
+import mapboxgl, { Map as CustomMap } from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiYnF1MTN0IiwiYSI6ImNscGlsYzNzajAwbnUyaW83bzdyZmFieG8ifQ.NieytJ-XGbivXz7nXv3sNw'
+mapboxgl.accessToken =
+  "pk.eyJ1IjoiYnF1MTN0IiwiYSI6ImNscGlsYzNzajAwbnUyaW83bzdyZmFieG8ifQ.NieytJ-XGbivXz7nXv3sNw";
 
 type ExtendedMap = CustomMap & {
-  setConfigProperty: (layer: string, property: string, value: string | boolean) => void;
+  setConfigProperty: (
+    layer: string,
+    property: string,
+    value: string | boolean,
+  ) => void;
 };
 
 export default function Map() {
@@ -22,8 +27,11 @@ export default function Map() {
   useEffect(() => {
     if (map.current) return; // initialize map only once
 
-    const colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    const lightPreset = colorScheme === 'dark' ? 'night' : 'dawn';
+    const colorScheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light";
+    const lightPreset = colorScheme === "dark" ? "night" : "dawn";
 
     map.current = new mapboxgl.Map({
       container: mapContainer.current!,
@@ -33,46 +41,67 @@ export default function Map() {
       antialias: true,
     });
 
-    map.current.on('style.load', () => {
+    map.current.on("style.load", () => {
       if (map.current) {
-        (map.current as ExtendedMap).setConfigProperty('basemap', 'lightPreset', lightPreset);
-        (map.current as ExtendedMap).setConfigProperty('basemap', 'showPointOfInterestLabels', false);
+        (map.current as ExtendedMap).setConfigProperty(
+          "basemap",
+          "lightPreset",
+          lightPreset,
+        );
+        (map.current as ExtendedMap).setConfigProperty(
+          "basemap",
+          "showPointOfInterestLabels",
+          false,
+        );
       }
-      const popup = new mapboxgl.Popup({ closeOnClick: false, closeButton: false, anchor: 'bottom-right' })
+      const popup = new mapboxgl.Popup({
+        closeOnClick: false,
+        closeButton: false,
+        anchor: "bottom-right",
+      })
         .setLngLat([82.90303531983233, 55.06584507569244])
-        .setHTML('<img src="/luna.png" alt="пиццерия Лунафуд, Новосибирск, Дачная 60к14" width="25px" height="25px">')
+        .setHTML(
+          '<img src="/luna.png" alt="пиццерия Лунафуд, Новосибирск, Дачная 60к14" width="25px" height="25px">',
+        )
         .addTo(map.current!);
-      popup.addClassName('');
+      popup.addClassName("");
     });
 
-    const screenWidth = window.innerWidth
-    const screenHeight = window.innerHeight
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
 
-    const currentOffset = ({ screenWidth, screenHeight }: { screenWidth: number, screenHeight: number }): mapboxgl.PointLike => {
+    const currentOffset = ({
+      screenWidth,
+      screenHeight,
+    }: {
+      screenWidth: number;
+      screenHeight: number;
+    }): mapboxgl.PointLike => {
       if (screenWidth < 640) {
-        return [0, screenHeight - (screenHeight * 0.80)];
+        return [0, screenHeight - screenHeight * 0.8];
       } else {
         return [0, 0];
       }
-    }
+    };
 
     function fly() {
-      const offset = currentOffset({ screenWidth: window.innerWidth, screenHeight: window.innerHeight });
+      const offset = currentOffset({
+        screenWidth: window.innerWidth,
+        screenHeight: window.innerHeight,
+      });
       map.current?.flyTo({
         center: [82.90303531983233, 55.06584507569244],
         essential: true,
         zoom: 16.5,
         duration: 15000,
-        offset: offset
+        offset: offset,
       });
     }
 
-    map.current.on('style.load', () => {
+    map.current.on("style.load", () => {
       fly();
     });
   }, [lng, lat, zoom, pitch]);
 
-  return (
-    <div ref={mapContainer} className="map-container" />
-  );
+  return <div ref={mapContainer} className="map-container" />;
 }

@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { PhoneIcon, MapPinIcon } from "@heroicons/react/24/solid"
+import Link from "next/link";
+import { PhoneIcon, MapPinIcon } from "@heroicons/react/24/solid";
 
 export default function HomePageHeader() {
   return (
@@ -11,8 +11,17 @@ export default function HomePageHeader() {
       <div className="main__header__contacts">
         <div className="contact-section">
           <div className="icon">
-            <svg width={24} height={24} version="1.1" viewBox="0 0 65.4 54.4" xmlns="http://www.w3.org/2000/svg">
-              <path d="m32.7 54.4-14.2-27.3-7.7 26.4h-10.8l15.7-53.5 17 32.9 17-32.9 15.7 53.5h-10.8l-7.7-26.4z" fill="currentColor" />
+            <svg
+              width={24}
+              height={24}
+              version="1.1"
+              viewBox="0 0 65.4 54.4"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m32.7 54.4-14.2-27.3-7.7 26.4h-10.8l15.7-53.5 17 32.9 17-32.9 15.7 53.5h-10.8l-7.7-26.4z"
+                fill="currentColor"
+              />
             </svg>
           </div>
           <div className="contact">
@@ -36,10 +45,12 @@ export default function HomePageHeader() {
           </div>
           <div className="contact">
             <span className="title">Телефон</span>
-            <Link href='tel:+79993220033' className="value on-hover on-tap">8 999 322 00 33</Link>
+            <Link href="tel:+79993220033" className="value on-hover on-tap">
+              8 999 322 00 33
+            </Link>
           </div>
         </div>
       </div>
     </header>
-  )
+  );
 }

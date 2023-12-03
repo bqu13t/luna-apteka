@@ -1,15 +1,15 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import Header from "@/components/header/header"
-import About from "@/components/about/about"
-import Footer from "@/components/footer/footer"
+import Header from "@/components/header/header";
+import About from "@/components/about/about";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  title: '🍕 О нас | Луна Фуд | Сеть пиццерий в Новосибирске',
+  title: "🍕 О нас | Луна Фуд | Сеть пиццерий в Новосибирске",
   alternates: {
-    canonical: '/about'
+    canonical: "/about",
   },
-}
+};
 
 export default function AboutPage() {
   return (
@@ -18,5 +18,5 @@ export default function AboutPage() {
       <About />
       <Footer />
     </>
-  )
+  );
 }

@@ -13,7 +13,8 @@ export default function HomePageStoryModal({ id }: { id: string }) {
     ? parseInt(storyItem.content_img_height)
     : undefined;
 
-  const blurDataURL = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII='
+  const blurDataURL =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII=";
 
   return (
     <div id={id} className="flex justify-center">
@@ -30,5 +31,5 @@ export default function HomePageStoryModal({ id }: { id: string }) {
         alt={description}
       />
     </div>
-  )
+  );
 }
