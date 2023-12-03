@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl, { Map as CustomMap } from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
+import "../../styles/mapbox.css";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiYnF1MTN0IiwiYSI6ImNscGlsYzNzajAwbnUyaW83bzdyZmFieG8ifQ.NieytJ-XGbivXz7nXv3sNw";
