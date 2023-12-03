@@ -59,7 +59,7 @@ export default function HomePageNav() {
         >
           <LunaIcon />
           <span className="sr-only">
-            Вернуться на главную страницу Луна Фуд
+            Вернуться к началу страницы Луна Фуд
           </span>
         </Link>
         <ul className="main__nav__list">
@@ -71,10 +71,14 @@ export default function HomePageNav() {
                 activeClass="active-link"
                 duration={500}
                 smooth={true}
-                offset={0}
+                offset={-86}
                 spy={true}
               >
+                <span className="sr-only">Доставка</span>
                 {`${name}`}
+                <span className="sr-only">
+                  в Новосибирске от пиццерии Луна Фуд
+                </span>
               </ScrollLink>
             </li>
           ))}
