@@ -708,10 +708,11 @@ body .map-container {
 
   width: 100%;
 
-  background-image: url('/bg-images/stories-bg.svg');
-  background-position: center;
+  /* background-image: url('/bg-images/stories-bg.svg'); */
+  background-image: none;
+  /* background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 .stories-container {
