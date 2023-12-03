@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pm2": "pm2"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
@@ -14,6 +15,7 @@
     "clsx": "^2.0.0",
     "mapbox-gl": "^3.0.0-beta.1",
     "next": "14.0.3",
+    "pm2": "^5.3.0",
     "react": "^18",
     "react-cookie": "^6.1.1",
     "react-dom": "^18",
