@@ -9,11 +9,11 @@ export default function HomePage() {
   return (
     <main className="home-page main">
       <HomePageNav />
-      <div className="main__container mt-4">
+      <HomePageStories />
+      <div className="main__container">
         <HomePageHeader />
         <HomePagePopular />
       </div>
-      <HomePageStories />
       <HomePageProducts />
     </main>
   )

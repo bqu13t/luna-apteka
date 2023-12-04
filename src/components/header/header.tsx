@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <header className="header">
-      <nav aria-label="Global">
+      <nav className="header__nav" aria-label="Global">
         <LogoSection onClick={() => setMobileMenuOpen(false)} />
         <button
           type="button"
@@ -35,7 +35,7 @@ export default function Header() {
           <Bars3Icon
             width={24}
             height={24}
-            className="h-6 w-6"
+            className="svg-icon"
             aria-hidden="true"
           />
         </button>
@@ -47,7 +47,7 @@ export default function Header() {
               "current-path": pathName === "/promo",
             })}
           >
-            Акции
+            Акции<span className="sr-only">и скидки в пиццерии Лунафуд</span>
           </Link>
           <Link
             href="/contacts"
@@ -55,7 +55,7 @@ export default function Header() {
               "current-path": pathName === "/contacts",
             })}
           >
-            Контакты
+            Контакты<span className="sr-only">пиццерии Лунафуд</span>
           </Link>
           <Link
             href="/work"
@@ -71,18 +71,18 @@ export default function Header() {
               "current-path": pathName === "/about",
             })}
           >
-            О нас
+            О нас<span className="sr-only">Информация о пиццерии ЛунаФуд</span>
           </Link>
         </Popover.Group>
         <div className="header__nav__desktop-menu">
-          <Link href="/login" className="sr-only on-hover on-tap">
+          <Link href="/login" className="login-section sr-only on-hover on-tap">
             Войти <span aria-hidden="true">&rarr;</span>
           </Link>
-          <Link href="tel:+79993220033" className="flex gap-2 on-hover on-tap">
+          <Link href="tel:+79993220033" className="login-section on-hover on-tap">
             <PhoneIcon
               width={24}
               height={24}
-              className="h-6 w-6"
+              className="svg-icon"
               aria-hidden="true"
             />
             8 999 322 00 33
@@ -106,14 +106,14 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Закрыть главное меню</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              <XMarkIcon width={24} height={24} className="svg-icon" aria-hidden="true" />
             </button>
           </div>
           <div className="header__mobile-menu__panel__links">
-            <Link href="tel:+79993220033" className="link on-hover on-tap">
+            <a href="tel:+79993220033" className="link on-hover on-tap">
               <PhoneIcon className="link__icon" aria-hidden="true" />
-              <span className="clipped-text font-bold">8 999 322 00 33</span>
-            </Link>
+              <span className="clipped-text">8 999 322 00 33</span>
+            </a>
             <Link href="login" className="sr-only link on-hover on-tap">
               <ArrowRightCircleIcon className="link__icon" aria-hidden="true" />
               <span className="block">Войти</span>

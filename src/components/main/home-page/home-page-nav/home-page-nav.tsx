@@ -51,39 +51,33 @@ export default function HomePageNav() {
 
   return (
     <nav className="main__nav">
-      <div className="main__nav__container">
-        <Link
-          href="/"
-          className="main__nav__logo on-hover"
-          onClick={scrollToTop}
-        >
-          <LunaIcon />
-          <span className="sr-only">
-            Вернуться к началу страницы Луна Фуд
-          </span>
-        </Link>
-        <ul className="main__nav__list">
-          {navItems.map(({ id, to, name }) => (
-            <li key={id}>
-              <ScrollLink
-                href={`#${to}`}
-                to={to}
-                activeClass="active-link"
-                duration={500}
-                smooth={true}
-                offset={-86}
-                spy={true}
-              >
-                <span className="sr-only">Доставка</span>
-                {`${name}`}
-                <span className="sr-only">
-                  в Новосибирске от пиццерии Луна Фуд
-                </span>
-              </ScrollLink>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Link
+        href="/"
+        className="main__nav__logo"
+        onClick={scrollToTop}
+      >
+        <LunaIcon />
+        <span className="sr-only">
+          Вернуться к началу страницы Луна Фуд
+        </span>
+      </Link>
+      <ul className="main__nav__list">
+        {navItems.map(({ id, to, name }) => (
+          <li key={id}>
+            <ScrollLink
+              href={`#${to}`}
+              to={to}
+              activeClass="active-link"
+              duration={500}
+              smooth={true}
+              offset={-86}
+              spy={true}
+            >
+              {name}
+            </ScrollLink>
+          </li>
+        ))}
+      </ul>
     </nav>
   )
 }

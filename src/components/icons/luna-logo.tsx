@@ -3,10 +3,7 @@ export default function LunaLogo() {
     <svg
       width="160"
       height="50"
-      className="
-          min-h-[50px] min-w-[160px]
-          drop-shadow-[-2px_0px_3px_rgba(0,0,0,.1)]
-          dark:drop-shadow-[-2px_0px_3px_rgba(255,255,255,.1)]"
+      className="lunafood-logo"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
