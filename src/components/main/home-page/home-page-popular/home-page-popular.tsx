@@ -11,19 +11,19 @@ export default function HomePagePopular() {
   const blurDataURL =
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII="
 
-  useEffect(() => {
-    setScreenWidth(window.innerWidth)
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth)
-    }
-    window.addEventListener("resize", handleResize)
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  }, [])
+  // useEffect(() => {
+  //   setScreenWidth(window.innerWidth)
+  //   const handleResize = () => {
+  //     setScreenWidth(window.innerWidth)
+  //   }
+  //   window.addEventListener("resize", handleResize)
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize)
+  //   }
+  // }, [])
 
-  const priorityImagesCount =
-    screenWidth < 640 ? mobilePriorityImagesCount : desktopPriorityImagesCount
+  // const priorityImagesCount =
+  //   screenWidth < 640 ? mobilePriorityImagesCount : desktopPriorityImagesCount
 
   return (
     <ul className="main__popular">
@@ -49,7 +49,8 @@ export default function HomePagePopular() {
             placeholder="blur"
             blurDataURL={blurDataURL}
             quality={50}
-            priority={index < priorityImagesCount ? true : false}
+            // priority={index < priorityImagesCount ? true : false}
+            priority={false}
             className="item-image"
             src={img_url}
             width={100}
