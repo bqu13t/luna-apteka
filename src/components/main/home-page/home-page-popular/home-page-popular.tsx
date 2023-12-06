@@ -58,7 +58,7 @@ export default function HomePagePopular() {
             alt={name}
           />
           <div className="item-description">
-            <h3 className="title">{`Пицца ${name}`}</h3>
+            <h3 className="title">{`${name}`}</h3>
             <p className="price">{price} ₽</p>
           </div>
         </li>
