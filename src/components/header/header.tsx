@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <header className="header">
-      <noscript><div><img src="https://mc.yandex.ru/watch/95785139" className="absolute top-[-9999px]" alt="" /></div></noscript>
+      <noscript><div><img src="https://mc.yandex.ru/watch/95785139" className="absolute top-[-9999px] w-[1px] h-[1px]" alt="ym" /></div></noscript>
       <nav className="header__nav" aria-label="Global">
         <LogoSection onClick={() => setMobileMenuOpen(false)} />
         <button
