@@ -11,7 +11,7 @@ const RUN_ENV_MAP = {
     max_memory_restart: "250M",
   },
   prod: {
-    instances: 2,
+    instances: 4,
     max_memory_restart: "1000M",
   },
 }
