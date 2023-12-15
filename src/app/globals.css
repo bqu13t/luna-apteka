@@ -657,6 +657,11 @@ body {
   transition: var(--transition);
 }
 
+.main__popular__item:first-child h3 {
+  font-size: var(--header-font-size);
+  font-weight: var(--font-bold);
+}
+
 .main__popular__item .rate-number {
   opacity: 1;
   position: absolute;
