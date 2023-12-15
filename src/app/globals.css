@@ -614,10 +614,10 @@ body {
 
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  padding-top: var(--padding);
+  padding-top: 1rem;
   padding-bottom: calc(1rem - 0.4rem);
 
-  scrollbar-color: rgb(var(--bg-section-rgb)) transparent;
+  scrollbar-color: rgba(var(--scrollbar-rgba)) transparent;
   overflow: visible;
   overflow-x: scroll;
 }
@@ -630,7 +630,7 @@ body {
 }
 
 .main__popular::-webkit-scrollbar-thumb {
-  background: rgba(var(--bg-section-rgb));
+  background: rgba(var(--scrollbar-rgba));
   -webkit-border-radius: 1ex;
 }
 
