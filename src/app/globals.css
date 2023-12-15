@@ -43,7 +43,7 @@
     drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   --icon-drop-shadow: drop-shadow(-2px 0px 3px rgb(0 0 0 / 0.1));
   --mobile-panel-box-shadow: -5px 0px 10px 0 rgb(0, 0, 0, 0.1);
-  --scrollbar-rgba: 243, 244, 246, 1;
+  --scrollbar-rgba: 209, 213, 219, 1;
   --border-radius: 1rem;
   --on-hover-opacity: 0.8;
   --on-hover-brightness: 1;
@@ -302,7 +302,7 @@ body {
   max-width: 80rem;
   height: 70px;
 
-  margin-bottom: var(--margin);
+  /* margin-bottom: var(--margin); */
   padding: 0.5rem;
   padding-left: 1rem;
 
@@ -425,13 +425,13 @@ body {
   width: 100%;
   max-width: 80rem;
 
-  margin-bottom: var(--margin);
-  padding-top: 0.5rem;
-  padding-bottom: calc(0.5rem - 5px);
+  margin-bottom: 0.5rem;
+  /* padding-top: 0.5rem; */
+  /* padding-bottom: calc(0.5rem - 5px); */
 
-  border-radius: var(--border-radius);
+  /* border-radius: var(--border-radius);
   background-color: rgb(var(--bg-section-rgb));
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow); */
 
   overflow: hidden;
 }
@@ -443,7 +443,9 @@ body {
   align-items: center;
   gap: calc(var(--margin) * 2);
 
-  padding: var(--padding);
+  /* padding: var(--padding); */
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
 
   list-style: none;
   overflow-x: scroll;
@@ -452,7 +454,7 @@ body {
 }
 
 .main__stories__list li {
-  box-shadow: var(--box-shadow);
+  /* box-shadow: var(--box-shadow); */
 }
 
 .main__stories__list::-webkit-scrollbar {
@@ -1413,6 +1415,15 @@ body {
   :root {
     --margin: 2rem;
     --padding: 2rem;
+  }
+
+  .main__stories {
+    margin-bottom: 1rem;
+  }
+
+  .main__stories__list {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
   }
 
   .main__popular__item {
