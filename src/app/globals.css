@@ -491,6 +491,11 @@ body {
 .main__stories__list__story:hover {
   transform: translateY(-2px);
 }
+
+.main__stories__list__story img {
+  width: 90px;
+  height: 135px;
+}
 /* --- MAIN__STORIES END --- */
 
 .main__container {
@@ -1345,6 +1350,11 @@ body {
   .main__nav.is-pinned {
     background-color: rgba(var(--bg-section-rgb), 85%);
     backdrop-filter: var(--backdrop-filter);
+  }
+
+  .main__stories__list__story img {
+    width: 120px;
+    height: 180px;
   }
 
   .main__popular {
