@@ -94,7 +94,6 @@ export default function HomePageStories() {
               </div>
 
               <Image
-                className="rounded-2xl object-cover"
                 quality={50}
                 priority={false}
                 placeholder="blur"

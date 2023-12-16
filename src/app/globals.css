@@ -453,10 +453,6 @@ body {
   scrollbar-color: rgba(var(--scrollbar-rgba)) transparent;
 }
 
-.main__stories__list li {
-  /* box-shadow: var(--box-shadow); */
-}
-
 .main__stories__list::-webkit-scrollbar {
   height: 5px;
   width: 5px;
@@ -495,6 +491,9 @@ body {
 .main__stories__list__story img {
   width: 90px;
   height: 135px;
+
+  object-fit: cover;
+  border-radius: var(--border-radius);
 }
 /* --- MAIN__STORIES END --- */
 
@@ -816,11 +815,10 @@ body {
 }
 
 .story-img {
-  width: 100%;
   min-width: 300px;
   min-height: 400px;
-  max-width: 639px;
-  max-height: 95vh;
+  max-width: 640px;
+  max-height: 100vh;
   object-fit: contain;
 }
 
@@ -831,7 +829,7 @@ body {
   transform: translateX(-50%);
 
   width: calc(100% - 0.5rem);
-  max-width: calc(639px - 0.5rem);
+  max-width: calc(640px - 0.5rem);
 
   height: 3px;
   margin-left: auto;
@@ -1217,13 +1215,13 @@ body {
   }
 
   .story-img {
-    width: 639px;
-    height: 959px;
+    width: 640px;
+    height: 960px;
   }
 
   .progress-bar {
-    width: calc(639px - 1rem);
-    max-width: calc(639px - 0.5rem);
+    width: calc(640px - 1rem);
+    max-width: calc(640px - 0.5rem);
   }
 
   .main__cards {
@@ -1350,6 +1348,11 @@ body {
   .main__nav.is-pinned {
     background-color: rgba(var(--bg-section-rgb), 85%);
     backdrop-filter: var(--backdrop-filter);
+  }
+
+  .main__stories__list__story {
+    width: 120px;
+    height: 180px;
   }
 
   .main__stories__list__story img {
