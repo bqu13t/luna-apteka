@@ -13,10 +13,22 @@ type StoryItem = {
 
 const storiesList: StoryItem[] = [
   {
+    id: "story-7",
+    linkName: "Кот съел пиццу",
+    title: "Оставили пиццу без присмотра",
+    description: "Фатальная ошибка",
+    title_img_src: "/stories/titles/cat-eat-title.png",
+    title_img_width: "90",
+    title_img_height: "135",
+    content_img_src: "/stories/content/cat-eat-content.png",
+    content_img_width: "360",
+    content_img_height: "540",
+  },
+  {
     id: "story-6",
-    linkName: "Время выбирать сторону",
-    title: "Мы сделали темную тему",
-    description: "Она включится автоматически, если на вашем устройстве активирован темный режим",
+    linkName: "Идея для сюрприза",
+    title: "Доставка горячего шоколада",
+    description: "Доставим горячий шоколад со взбитыми сливками вашим близким",
     title_img_src: "/stories/titles/hot-chocolate-delivery-title.png",
     title_img_width: "90",
     title_img_height: "135",
