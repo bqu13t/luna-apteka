@@ -35,7 +35,7 @@ export default function HomePageProducts() {
   return (
     <section className="main__cards">
       <section id="pizza" className="main__cards__group">
-        <h2 className="main__cards__group__header">Пицца</h2>
+        <h2 className="main__cards__group__header">Пиццы</h2>
         <ul className="main__cards__group__list">
           {pizzaItems.map(
             ({

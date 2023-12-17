@@ -18,20 +18,20 @@ export default function Contacts() {
           <div className="contact">
             <span className="title">Телефон</span>
             <Link href="tel:+79993220033" className="value on-hover on-tap">
-              8 999 322 00 33
+              +7 (999) 322-00-33
             </Link>
           </div>
         </div>
         <div className="contact-section">
           <div className="contact">
             <span className="title">Доставка и самовывоз</span>
-            <p className="value">Пн-Вс: 9:00 — 21:00</p>
+            <p className="value">Пн-Вс: 9:00 - 21:00</p>
           </div>
         </div>
         <div className="contact-section">
           <div className="contact">
             <span className="title">Время работы пиццерии</span>
-            <p className="value">Пн-Вс: 9:00 — 21:00</p>
+            <p className="value">Пн-Вс: 9:00 - 21:00</p>
           </div>
         </div>
       </div>

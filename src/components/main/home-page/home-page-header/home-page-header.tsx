@@ -46,7 +46,7 @@ export default function HomePageHeader() {
           <div className="contact">
             <span className="title">Телефон</span>
             <Link href="tel:+79993220033" className="value on-hover on-tap">
-              8 999 322 00 33
+              +7 (999) 322-00-33
             </Link>
           </div>
         </div>

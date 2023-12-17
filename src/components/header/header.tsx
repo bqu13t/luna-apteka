@@ -44,6 +44,14 @@ export default function Header() {
 
         <Popover.Group className="header__nav__desktop-menu">
           <Link
+            href="/"
+            className={clsx("on-hover on-tap", {
+              "current-path": pathName === "/",
+            })}
+          >
+            Главная<span className="sr-only">страница сайта пиццерии Лунафуд</span>
+          </Link>
+          <Link
             href="/promo"
             className={clsx("on-hover on-tap", {
               "current-path": pathName === "/promo",
@@ -87,7 +95,7 @@ export default function Header() {
               className="svg-icon"
               aria-hidden="true"
             />
-            8 999 322 00 33
+            {`+7 (999) 322-00-33`}
           </Link>
         </div>
       </nav>
@@ -114,8 +122,12 @@ export default function Header() {
           <div className="header__mobile-menu__panel__links">
             <a href="tel:+79993220033" className="link on-hover on-tap">
               <PhoneIcon className="link__icon" aria-hidden="true" />
-              <span className="clipped-text">8 999 322 00 33</span>
+              <span className="clipped-text">{`+7 (999) 322-00-33`}</span>
             </a>
+            <Link href="/" className="link on-hover on-tap">
+              <ArrowRightCircleIcon className="link__icon" aria-hidden="true" />
+              <span className="block">Главная</span>
+            </Link>
             <Link href="login" className="sr-only link on-hover on-tap">
               <ArrowRightCircleIcon className="link__icon" aria-hidden="true" />
               <span className="block">Войти</span>

@@ -314,6 +314,9 @@ body {
 
   will-change: border-top-left-radius, border-top-right-radius;
   transition: var(--transition);
+
+  overflow: hidden;
+
   z-index: 3;
 }
 
@@ -333,7 +336,7 @@ body {
   height: 50px;
   margin-right: -58px;
 
-  transform: translateX(-58px) scale(0.01) rotate(90deg);
+  transform: translateX(-58px) scale(0) rotate(90deg);
   will-change: margin-right, transform;
   transition: var(--transition);
 }
