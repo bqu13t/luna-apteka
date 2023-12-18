@@ -1471,6 +1471,10 @@ body {
     right: 0;
   }
 
+  .product-modal__description {
+    width: 100%;
+  }
+
   .card-image {
     flex-basis: auto;
     flex-grow: 0;

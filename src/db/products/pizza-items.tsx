@@ -35,11 +35,13 @@ const pizzaItems: PizzaItem[] = [
       "Нежное филе цыпленка, ломтики бекона, сыр моцарелла, томаты черри, маринованные огурчики, свежий красный лук и фирменный соус бургер. Попробуйте бургер в форме пиццы!",
 
     price_sm: 549,
+    old_price_sm: 999,
     weight_sm: 625,
     meat_weight_sm: 187.5,
     cheese_weight_sm: 187.5,
 
     price_lg: 849,
+    old_price_lg: 999,
     weight_lg: 1000,
     meat_weight_lg: 300,
     cheese_weight_lg: 300,
@@ -51,8 +53,6 @@ const pizzaItems: PizzaItem[] = [
     is_meatless: false,
     is_profit: false,
 
-    old_price_sm: 999,
-    old_price_lg: 999,
     promo_title: "Новинка",
     img_url: "/pizza-photo/pizza-burger.png",
   },
@@ -62,12 +62,14 @@ const pizzaItems: PizzaItem[] = [
     description:
       "Колбаска пепперони, сыр моцарелла, свежие томаты, свежие шампиньоны, маслины и фирменный томатный соус",
 
-    price_sm: 549,
+    price_sm: 519,
+    old_price_sm: 999,
     weight_sm: 625,
     meat_weight_sm: 187.5,
     cheese_weight_sm: 187.5,
 
-    price_lg: 849,
+    price_lg: 959,
+    old_price_lg: 999,
     weight_lg: 1000,
     meat_weight_lg: 300,
     cheese_weight_lg: 300,
@@ -79,8 +81,6 @@ const pizzaItems: PizzaItem[] = [
     is_meatless: false,
     is_profit: false,
 
-    old_price_sm: 999,
-    old_price_lg: 999,
     promo_title: "Хит",
     img_url: "/pizza-photo/manhattan.png",
   },
@@ -90,14 +90,14 @@ const pizzaItems: PizzaItem[] = [
     description:
       "Копчено-вареное филе цыпленка, свиная грудинка, сочетание красного сыра чеддер и сыра моцарелла, свежий болгарский перчик и фирменный томатный соус",
 
-    price_sm: 549,
-    old_price_sm: 649,
+    price_sm: 539,
+    old_price_sm: 650,
     weight_sm: 625,
     meat_weight_sm: 187.5,
     cheese_weight_sm: 187.5,
 
-    price_lg: 849,
-    old_price_lg: 949,
+    price_lg: 990,
+    old_price_lg: 1130,
     weight_lg: 1000,
     meat_weight_lg: 300,
     cheese_weight_lg: 300,
@@ -199,11 +199,13 @@ const pizzaItems: PizzaItem[] = [
     description:
       "Нежное филе цыпленка, сыр моцарелла, свежие томаты, свежий болгарский перчик и острые перчики Халапеньо, свежий красный лук и фирменный томатный соус для любителей пикантных вкусов",
     price_sm: 549,
+    old_price_sm: 999,
     weight_sm: 625,
     meat_weight_sm: 187.5,
     cheese_weight_sm: 187.5,
 
-    price_lg: 849,
+    price_lg: 990,
+    old_price_lg: 1200,
     weight_lg: 1000,
     meat_weight_lg: 300,
     cheese_weight_lg: 300,
@@ -215,8 +217,6 @@ const pizzaItems: PizzaItem[] = [
     is_meatless: false,
     is_profit: false,
 
-    old_price_sm: 999,
-    old_price_lg: 990,
     promo_title: "Хит",
     img_url: "/pizza-photo/spicy-mix.png",
   },
@@ -252,12 +252,12 @@ const pizzaItems: PizzaItem[] = [
     name: "Гавайская 🍍",
     description:
       "Отличное сочетание ветчины, ананасов, сыра моцарелла и фирменного томатного соуса",
-    price_sm: 549,
+    price_sm: 469,
     weight_sm: 625,
     meat_weight_sm: 187.5,
     cheese_weight_sm: 187.5,
 
-    price_lg: 849,
+    price_lg: 939,
     weight_lg: 1000,
     meat_weight_lg: 300,
     cheese_weight_lg: 300,

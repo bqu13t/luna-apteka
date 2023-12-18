@@ -14,7 +14,7 @@ type DrinkItem = {
 const drinkItems: DrinkItem[] = [
   {
     id: "101",
-    name: "Добрый Кола",
+    name: "Добрый Кола, 0.5л",
     description: "Сильногазированный напиток",
     price: 90,
     is_promo: false,
@@ -26,7 +26,7 @@ const drinkItems: DrinkItem[] = [
   },
   {
     id: "102",
-    name: "Добрый Кола без сахара",
+    name: "Добрый Кола без сахара, 0.5л",
     description: "Сильногазированный напиток без добавления сахара",
     price: 90,
     is_promo: false,
@@ -38,7 +38,7 @@ const drinkItems: DrinkItem[] = [
   },
   {
     id: "103",
-    name: "Добрый лимон-лайм",
+    name: "Добрый лимон-лайм, 0.5л",
     description: "Сильногазированный напиток",
     price: 90,
     is_promo: false,
@@ -50,7 +50,7 @@ const drinkItems: DrinkItem[] = [
   },
   {
     id: "104",
-    name: "Добрый апельсин",
+    name: "Добрый апельсин, 0.5л",
     description: "Сильногазированный напиток",
     price: 90,
     is_promo: false,
@@ -62,7 +62,7 @@ const drinkItems: DrinkItem[] = [
   },
   {
     id: "105",
-    name: "Добрый манго-маракуйя",
+    name: "Добрый манго-маракуйя, 0.5л",
     description: "Сильногазированный напиток",
     price: 90,
     is_promo: false,
@@ -74,7 +74,7 @@ const drinkItems: DrinkItem[] = [
   },
   {
     id: "201",
-    name: "Яблочный сок Rich",
+    name: "Яблочный сок Rich, 1л",
     description: "100% яблочный сок",
     price: 190,
     is_promo: false,
@@ -86,7 +86,7 @@ const drinkItems: DrinkItem[] = [
   },
   {
     id: "202",
-    name: "Апельсиновый сок Rich",
+    name: "Апельсиновый сок Rich, 1л",
     description: "100% апельсиновый сок",
     price: 190,
     is_promo: false,
@@ -98,7 +98,7 @@ const drinkItems: DrinkItem[] = [
   },
   {
     id: "205",
-    name: "Вишневый нектар Rich",
+    name: "Вишневый нектар Rich, 1л",
     description: "",
     price: 190,
     is_promo: false,
@@ -110,7 +110,7 @@ const drinkItems: DrinkItem[] = [
   },
   {
     id: "301",
-    name: "Rich tea лимон",
+    name: "Rich tea лимон, 0.5л",
     description: "Черный чай Рич со вкусом лимона",
     price: 109,
     is_promo: false,
@@ -122,7 +122,7 @@ const drinkItems: DrinkItem[] = [
   },
   {
     id: "302",
-    name: "Rich tea зеленый",
+    name: "Rich tea зеленый, 0.5л",
     description: "Зеленый чай Рич",
     price: 109,
     is_promo: false,
@@ -134,7 +134,7 @@ const drinkItems: DrinkItem[] = [
   },
   {
     id: "303",
-    name: "Rich tea зеленый c манго",
+    name: "Rich tea зеленый c манго, 0.5л",
     description: "Зеленый чай со вкусом манго",
     price: 109,
     is_promo: false,
@@ -146,7 +146,7 @@ const drinkItems: DrinkItem[] = [
   },
   {
     id: "304",
-    name: "Вода BonaAqua негазированная",
+    name: "Вода BonaAqua негазированная, 0.5л",
     description: "",
     price: 70,
     is_promo: false,
