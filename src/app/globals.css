@@ -1600,8 +1600,8 @@ body {
 
   .main__cards__group__list li {
     flex-direction: column;
-    flex-basis: calc(33.3333% - var(--margin) * 2 / 3);
-    max-width: calc(33.3333% - var(--margin) * 2 / 3);
+    flex-basis: calc(25% - var(--margin) * 3 / 4);
+    max-width: calc(25% - var(--margin) * 3 / 4);
   }
 
   .card-image {
@@ -1616,8 +1616,8 @@ body {
   }
 
   .main__cards__group__list li img {
-    min-width: 285px;
-    width: 370px;
+    /* min-width: 285px; */
+    /* width: 370px; */
   }
 
   .card-content {
