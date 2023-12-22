@@ -1,46 +1,52 @@
 import pizzaItems from "@/db/products/pizza-items"
+import comboItems from "@/db/products/combo-items"
+
 import Image from "next/image"
 
-import { useState } from 'react'
 import { Fragment } from 'react'
 import { Tab } from '@headlessui/react'
 
 import WeightIcon from "@/components/icons/weight-icon"
 import MeatIcon from "@/components/icons/meat-icon"
 import CheeseIcon from "@/components/icons/cheese-icon"
-import SizeIcon from "@/components/icons/size-icon"
 import PriceIcon from "@/components/icons/price-icon"
 import clsx from "clsx"
 import LineThrough from "@/components/icons/line-through"
 
 export default function ProductCard({ id }: { id: string }) {
-  const pizzaItem = pizzaItems.find((item) => item.id === id)
+  let productItem
 
-  const name = pizzaItem ? pizzaItem.name : ""
-  const description = pizzaItem ? pizzaItem.description : ""
+  if (id.startsWith('pizza')) {
+    productItem = pizzaItems.find((item) => item.id === id)
+  } else if (id.startsWith('combo')) {
+    productItem = comboItems.find((item) => item.id === id)
+  }
 
-  const priceSm = pizzaItem ? pizzaItem.price_sm : null
-  const oldPriceSm = pizzaItem ? pizzaItem.old_price_sm : null
-  const weightSm = pizzaItem ? pizzaItem.weight_sm : null
-  const meatWeightSm = pizzaItem ? pizzaItem.meat_weight_sm : null
-  const cheeseWeightSm = pizzaItem ? pizzaItem.cheese_weight_sm : null
+  const name = productItem ? productItem.name : ""
+  const description = productItem ? productItem.description : ""
 
-  const priceLg = pizzaItem ? pizzaItem.price_lg : null
-  const oldPriceLg = pizzaItem ? pizzaItem.old_price_lg : null
-  const weightLg = pizzaItem ? pizzaItem.weight_lg : null
-  const meatWeightLg = pizzaItem ? pizzaItem.meat_weight_lg : null
-  const cheeseWeightLg = pizzaItem ? pizzaItem.cheese_weight_lg : null
+  const priceSm = productItem ? productItem.price_sm : null
+  const oldPriceSm = productItem ? productItem.old_price_sm : null
+  const weightSm = productItem ? productItem.weight_sm : null
+  const meatWeightSm = productItem ? productItem.meat_weight_sm : null
+  const cheeseWeightSm = productItem ? productItem.cheese_weight_sm : null
 
-  const isPromo = pizzaItem ? pizzaItem.is_promo : null
-  const isNew = pizzaItem ? pizzaItem.is_new : null
-  const isTop = pizzaItem ? pizzaItem.is_top : null
-  const isMeatless = pizzaItem ? pizzaItem.is_meatless : null
-  const isProfit = pizzaItem ? pizzaItem.is_profit : null
+  const priceLg = productItem ? productItem.price_lg : null
+  const oldPriceLg = productItem ? productItem.old_price_lg : null
+  const weightLg = productItem ? productItem.weight_lg : null
+  const meatWeightLg = productItem ? productItem.meat_weight_lg : null
+  const cheeseWeightLg = productItem ? productItem.cheese_weight_lg : null
 
-  const promoTitle = pizzaItem ? pizzaItem.promo_title : null
+  const isPromo = productItem ? productItem.is_promo : null
+  const isNew = productItem ? productItem.is_new : null
+  const isTop = productItem ? productItem.is_top : null
+  const isMeatless = productItem ? productItem.is_meatless : null
+  const isProfit = productItem ? productItem.is_profit : null
 
-  const imgSrc = pizzaItem ? pizzaItem.img_url : ""
-  const imgAlt = pizzaItem ? pizzaItem.description : ""
+  const promoTitle = productItem ? productItem.promo_title : null
+
+  const imgSrc = productItem ? productItem.img_url : ""
+  const imgAlt = productItem ? productItem.description : ""
 
   const blurDataURL =
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII="
@@ -60,8 +66,6 @@ export default function ProductCard({ id }: { id: string }) {
 
       <div className="product-modal__description">
         <h3>{name}</h3>
-
-
 
         <div className="product-feature">
           <div className="product-feature__description">
@@ -119,7 +123,7 @@ export default function ProductCard({ id }: { id: string }) {
                   <p className="value"><strong>{weightSm} гр</strong></p>
                 </div>
               </div>
-              <div
+              {/* <div
                 className={clsx("product-feature", {
                   "product-feature-hidden": isMeatless === true,
                 })}
@@ -131,8 +135,8 @@ export default function ProductCard({ id }: { id: string }) {
                   <span className="title">Мясная начинка</span>
                   <p className="value"><strong>{Math.round(meatWeightSm! / weightSm! * 100)}% - {meatWeightSm} гр</strong></p>
                 </div>
-              </div>
-              <div className="product-feature">
+              </div> */}
+              {/* <div className="product-feature">
                 <div className="product-feature__icon">
                   <CheeseIcon />
                 </div>
@@ -140,7 +144,7 @@ export default function ProductCard({ id }: { id: string }) {
                   <span className="title">Cырная начинка</span>
                   <p className="value"><strong>{Math.round(cheeseWeightSm! / weightSm! * 100)}% - {cheeseWeightSm} гр</strong></p>
                 </div>
-              </div>
+              </div> */}
               <div className="product-feature">
                 <div className="product-feature__icon">
                   <PriceIcon />
@@ -188,7 +192,7 @@ export default function ProductCard({ id }: { id: string }) {
                   <p className="value"><strong>{weightLg} гр</strong></p>
                 </div>
               </div>
-              <div
+              {/* <div
                 className={clsx("product-feature", {
                   "product-feature-hidden": isMeatless === true,
                 })}
@@ -200,8 +204,8 @@ export default function ProductCard({ id }: { id: string }) {
                   <span className="title">Мясная начинка</span>
                   <p className="value"><strong>{Math.round(meatWeightLg! / weightLg! * 100)}% - {meatWeightLg} гр</strong></p>
                 </div>
-              </div>
-              <div className="product-feature">
+              </div> */}
+              {/* <div className="product-feature">
                 <div className="product-feature__icon">
                   <CheeseIcon />
                 </div>
@@ -209,7 +213,7 @@ export default function ProductCard({ id }: { id: string }) {
                   <span className="title">Cырная начинка</span>
                   <p className="value"><strong>{Math.round(cheeseWeightLg! / weightLg! * 100)}% - {cheeseWeightLg} гр</strong></p>
                 </div>
-              </div>
+              </div> */}
               <div className="product-feature">
                 <div className="product-feature__icon">
                   <PriceIcon />

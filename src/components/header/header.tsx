@@ -1,10 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Dialog, Popover } from "@headlessui/react"
-import { useState, useRef } from "react"
+import { useState } from "react"
 import clsx from "clsx"
 import {
   Bars3Icon,
