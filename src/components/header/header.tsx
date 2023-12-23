@@ -52,7 +52,7 @@ export default function Header() {
           </Link>
           <Link
             href="/promo"
-            className={clsx("on-hover on-tap", {
+            className={clsx("on-hover on-tap sr-only", {
               "current-path": pathName === "/promo",
             })}
           >
@@ -68,7 +68,7 @@ export default function Header() {
           </Link>
           <Link
             href="/work"
-            className={clsx("on-hover on-tap", {
+            className={clsx("on-hover on-tap sr-only", {
               "current-path": pathName === "/work",
             })}
           >
@@ -76,7 +76,7 @@ export default function Header() {
           </Link>
           <Link
             href="/about"
-            className={clsx("on-hover on-tap", {
+            className={clsx("on-hover on-tap sr-only", {
               "current-path": pathName === "/about",
             })}
           >
@@ -131,7 +131,7 @@ export default function Header() {
               <ArrowRightCircleIcon className="link__icon" aria-hidden="true" />
               <span className="block">Войти</span>
             </Link>
-            <Link href="promo" className="link on-hover on-tap">
+            <Link href="promo" className="link on-hover on-tap sr-only">
               <RocketLaunchIcon className="link__icon" aria-hidden="true" />
               <span className="block">Акции</span>
             </Link>
@@ -139,11 +139,11 @@ export default function Header() {
               <MapPinIcon className="link__icon" aria-hidden="true" />
               <span className="block">Контакты</span>
             </Link>
-            <Link href="work" className="link on-hover on-tap">
+            <Link href="work" className="link on-hover on-tap sr-only">
               <UserGroupIcon className="link__icon" aria-hidden="true" />
               <span className="block">Работа в ЛунаФуд</span>
             </Link>
-            <Link href="about" className="link on-hover on-tap">
+            <Link href="about" className="link on-hover on-tap sr-only">
               <MoonIcon className="link__icon" aria-hidden="true" />
               <span className="block">О нас</span>
             </Link>

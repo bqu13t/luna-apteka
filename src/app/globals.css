@@ -1253,6 +1253,8 @@ body {
   justify-content: center;
   align-items: center;
 
+  width: fit-content;
+
   position: relative;
 }
 
@@ -1262,13 +1264,14 @@ body {
 
 .old-price-section svg {
   position: absolute;
-  left: -5%;
+  left: -10%;
   bottom: 0;
   height: 90%;
-  width: 110%;
+  width: 120%;
 }
 
 .old-price-section .old-price {
+  font-size: var(--small-font-size);
   color: rgb(var(--light-color-rgb));
 }
 

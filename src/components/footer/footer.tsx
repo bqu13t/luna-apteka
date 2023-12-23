@@ -7,15 +7,18 @@ export default function Footer() {
         <h2 className="font-bold">ЛунаФуд © 2023</h2>
         <ul>
           <li>
+            <Link href="/">Главная</Link>
+          </li>
+          <li className="sr-only">
             <Link href="promo">Акции</Link>
           </li>
           <li>
             <Link href="contacts">Контакты</Link>
           </li>
-          <li>
+          <li className="sr-only">
             <Link href="work">Работа в ЛунаФуд</Link>
           </li>
-          <li>
+          <li className="sr-only">
             <Link href="about">О нас</Link>
           </li>
         </ul>
