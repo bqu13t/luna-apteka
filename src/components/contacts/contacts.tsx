@@ -17,9 +17,9 @@ export default function Contacts() {
         <div className="contact-section">
           <div className="contact">
             <span className="title">Телефон</span>
-            <Link href="tel:+79993220033" className="value on-hover on-tap">
+            <a href="tel:+79993220033" className="value on-hover on-tap">
               +7 (999) 322-00-33
-            </Link>
+            </a>
           </div>
         </div>
         <div className="contact-section">

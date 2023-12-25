@@ -1,13 +1,31 @@
+"use client"
+
 import Link from "next/link"
+import LunaLogoFooter from "../icons/luna-logo-footer"
+import { animateScroll as scroll } from "react-scroll"
+
+const scrollToTop = () => {
+  scroll.scrollToTop()
+}
 
 export default function Footer() {
   return (
     <footer className="footer">
       <section className="footer__links">
-        <h2 className="font-bold">ЛунаФуд © 2023</h2>
+        <div className="flex items-center gap-2">
+          <LunaLogoFooter />
+          <span className="font-bold"> © 2024</span>
+          <h2 className="sr-only">ЛунаФуд © 2024</h2>
+        </div>
+
         <ul>
           <li>
-            <Link href="/">Главная</Link>
+            <Link
+              href="/"
+              onClick={scrollToTop}
+            >
+              Главная
+            </Link>
           </li>
           <li className="sr-only">
             <Link href="promo">Акции</Link>
@@ -24,11 +42,13 @@ export default function Footer() {
         </ul>
       </section>
       <section className="footer__links">
-        <h2 className="font-bold">Контакты</h2>
+        <h2 className="text-xl font-bold">Как нас найти</h2>
         <ul>
-          <li>Метро: Заельцовская</li>
-          <li>Адрес: Новосибирск, ул. Дачная 60к14, ТЦ, 1 этаж</li>
-          <li>тел: +7 (999) 322-00-33</li>
+          <li>Метро Заельцовская</li>
+          <li>Новосибирск, Дачная 60к14, 1 этаж торгового центра</li>
+          <li>
+            <a href="tel:+79993220033">+7 (999) 322-00-33</a>
+          </li>
         </ul>
       </section>
     </footer>

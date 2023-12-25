@@ -1340,7 +1340,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: var(--padding);
+  padding: 1rem;
+  padding-bottom: 0.5rem;
   margin-top: calc(var(--margin) * 2);
 
   width: calc(100% - var(--margin) * 2);
@@ -1363,7 +1364,7 @@ body {
 
 .footer .footer__links {
   width: 100%;
-  padding-bottom: var(--padding);
+  /* padding-bottom: var(--padding); */
   margin-bottom: var(--margin);
   border-bottom: 1px solid rgba(var(--light-color-rgb), 25%);
 
@@ -1377,12 +1378,12 @@ body {
 }
 
 .footer__links li {
-  font-size: var(--small-font-size);
   color: rgb(var(--gray-400));
+  padding-bottom: 0.5rem;
 }
 
-.footer__links li {
-  padding: 0.5rem;
+.footer__links li:first-child {
+  padding-top: 0.5rem;
 }
 
 @media (min-width: 640px) {

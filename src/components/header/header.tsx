@@ -87,7 +87,7 @@ export default function Header() {
           <Link href="/login" className="login-section sr-only on-hover on-tap">
             Войти <span aria-hidden="true">&rarr;</span>
           </Link>
-          <Link href="tel:+79993220033" className="login-section on-hover on-tap">
+          <a href="tel:+79993220033" className="login-section on-hover on-tap">
             <PhoneIcon
               width={24}
               height={24}
@@ -95,7 +95,7 @@ export default function Header() {
               aria-hidden="true"
             />
             {`+7 (999) 322-00-33`}
-          </Link>
+          </a>
         </div>
       </nav>
 
