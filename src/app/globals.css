@@ -1668,6 +1668,10 @@ body {
     border-bottom: 0;
   }
 
+  .footer__links li:last-child {
+    padding-bottom: 0;
+  }
+
   .contacts-container ~ .footer {
     display: flex;
     position: fixed;

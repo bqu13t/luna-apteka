@@ -70,7 +70,7 @@ export default function HomePageNav() {
               activeClass="active-link"
               duration={500}
               smooth={true}
-              offset={-65}
+              offset={1}
               spy={true}
             >
               {name}
