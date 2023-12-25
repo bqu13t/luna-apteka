@@ -53,7 +53,7 @@ export default function HomePageNav() {
     <nav className="main__nav">
       <Link
         href="/"
-        className="main__nav__logo"
+        className="main__nav__logo on-hover on-tap"
         onClick={scrollToTop}
       >
         <LunaIcon />
@@ -70,7 +70,7 @@ export default function HomePageNav() {
               activeClass="active-link"
               duration={500}
               smooth={true}
-              offset={-86}
+              offset={-70}
               spy={true}
             >
               {name}

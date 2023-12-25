@@ -88,12 +88,12 @@ export default function Header() {
             Войти <span aria-hidden="true">&rarr;</span>
           </Link>
           <a href="tel:+79993220033" className="login-section on-hover on-tap">
-            <PhoneIcon
+            {/* <PhoneIcon
               width={24}
               height={24}
               className="svg-icon"
               aria-hidden="true"
-            />
+            /> */}
             {`+7 (999) 322-00-33`}
           </a>
         </div>
@@ -106,7 +106,7 @@ export default function Header() {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-10" aria-hidden="true" />
-        <Dialog.Panel className="header__mobile-menu__panel">
+        <Dialog.Panel className="header__mobile-menu__panel" onClick={() => setMobileMenuOpen(false)} >
           <div className="header__mobile-menu__panel__header">
             <LogoSection onClick={() => setMobileMenuOpen(false)} />
             <button

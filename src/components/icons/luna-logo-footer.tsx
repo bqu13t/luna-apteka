@@ -4,7 +4,7 @@ export default function LunaLogoFooter() {
       width="128"
       height="40"
       viewBox="0 0 160 50"
-      className="lunafood-logo"
+      className="lunafood-logo-footer"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

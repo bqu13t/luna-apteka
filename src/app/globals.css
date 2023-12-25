@@ -139,6 +139,10 @@ body {
   filter: var(--icon-drop-shadow);
 }
 
+.lunafood-logo-footer {
+  filter: drop-shadow(-2px 0px 3px rgb(255 255 255 / 0.1));
+}
+
 .header__nav__burger-button {
   display: flex;
   flex-direction: column;
@@ -346,7 +350,7 @@ body {
 .main__nav__logo .lunafood-icon {
   width: 50px;
   height: 50px;
-  filter: var(--drop-shadow);
+  filter: var(--icon-drop-shadow);
 }
 
 .main__nav.is-pinned .main__nav__logo {
@@ -510,8 +514,6 @@ body {
 
   width: 100%;
   max-width: 80rem;
-
-  margin-bottom: var(--margin);
 }
 
 /* --- MAIN__HEADER START --- */
@@ -786,9 +788,6 @@ body {
   transform: translateY(-2px) rotate(1deg) scale(1.05);
 }
 
-.main__cards__group__list li:hover img {
-}
-
 .main__popular__item .item-description {
   display: flex;
   flex-direction: column;
@@ -855,8 +854,6 @@ body {
   justify-content: flex-start;
   align-items: center;
 
-  gap: var(--margin);
-
   width: 100%;
   max-width: 80rem;
 }
@@ -869,6 +866,8 @@ body {
   align-self: stretch;
 
   gap: var(--margin);
+
+  padding-top: var(--padding);
 
   border-radius: var(--border-radius);
 }
@@ -1446,10 +1445,6 @@ body {
   .progress-bar {
     width: calc(640px - 1rem);
     max-width: calc(640px - 0.5rem);
-  }
-
-  .main__cards {
-    gap: var(--margin);
   }
 
   .main__cards__group__list {
