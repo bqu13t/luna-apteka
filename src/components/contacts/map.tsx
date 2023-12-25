@@ -18,7 +18,7 @@ type ExtendedMap = CustomMap & {
 export default function Map() {
   const mapContainer = useRef<HTMLDivElement | null>(null)
   const map = useRef<mapboxgl.Map | null>(null)
-  const [lng, setLng] = useState(82.90314555499413)
+  const [lng, setLng] = useState(82.90303531983233)
   const [lat, setLat] = useState(55.06584507569244)
   const [zoom, setZoom] = useState(15.3)
   const [pitch, setPitch] = useState(45)
@@ -43,12 +43,12 @@ export default function Map() {
 
     map.current.on("style.load", () => {
       if (map.current) {
-        ;(map.current as ExtendedMap).setConfigProperty(
+        (map.current as ExtendedMap).setConfigProperty(
           "basemap",
           "lightPreset",
           lightPreset
-        )
-        ;(map.current as ExtendedMap).setConfigProperty(
+        );
+        (map.current as ExtendedMap).setConfigProperty(
           "basemap",
           "showPointOfInterestLabels",
           false
@@ -89,18 +89,18 @@ export default function Map() {
         screenWidth: window.innerWidth,
         screenHeight: window.innerHeight,
       })
-      map.current?.flyTo({
-        center: [82.90303531983233, 55.06584507569244],
-        essential: true,
-        zoom: 16.5,
-        duration: 15000,
-        offset: offset,
-      })
+      // map.current?.flyTo({
+      //   center: [82.90303531983233, 55.06584507569244],
+      //   essential: true,
+      //   zoom: 16.5,
+      //   duration: 15000,
+      //   offset: offset,
+      // })
     }
 
-    map.current.on("style.load", () => {
-      fly()
-    })
+    // map.current.on("style.load", () => {
+    //   fly()
+    // })
   }, [lng, lat, zoom, pitch])
 
   return <div ref={mapContainer} className="map-container" />

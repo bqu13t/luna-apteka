@@ -58,7 +58,9 @@
   --max-section-width: 80rem;
 
   /* gray colors */
-  --gray-100: 243 244 246;
+  --gray-100: 243, 244, 246;
+  --gray-800: 31, 41, 55;
+  --gray-400: 156, 163, 175;
 
   /* brand colors */
   --luna-100-rgb: 255, 103, 98; /* #ff6762 orange */
@@ -745,6 +747,8 @@ body {
   justify-content: center;
   align-items: center;
   gap: 0rem;
+
+  cursor: auto;
 }
 
 .main__popular__item:first-child .top5-icon {
@@ -783,7 +787,6 @@ body {
 }
 
 .main__cards__group__list li:hover img {
-  transform: translateY(-2px) rotate(1deg) scale(1.05);
 }
 
 .main__popular__item .item-description {
@@ -1214,10 +1217,8 @@ body {
   transform: scale(1.15) rotate(-3deg);
 }
 
-.main__cards__group__list li:hover .open-modal-btn {
-}
-
-.main__cards__group__list li:hover img {
+#pizza .main__cards__group__list li:hover img,
+#combo .main__cards__group__list li:hover img {
   transform: translateY(-2px) rotate(1deg) scale(1.05);
   cursor: pointer;
 }
@@ -1351,7 +1352,7 @@ body {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   box-shadow: var(--box-shadow);
-  background-color: rgb(var(--bg-section-rgb));
+  background-color: rgb(var(--gray-800));
   z-index: 1;
 }
 
@@ -1365,6 +1366,8 @@ body {
   padding-bottom: var(--padding);
   margin-bottom: var(--margin);
   border-bottom: 1px solid rgba(var(--light-color-rgb), 25%);
+
+  color: rgb(var(--gray-100));
 }
 
 .footer .footer__links:last-child {
@@ -1375,7 +1378,7 @@ body {
 
 .footer__links li {
   font-size: var(--small-font-size);
-  color: rgb(var(--light-color-rgb));
+  color: rgb(var(--gray-400));
 }
 
 .footer__links li {
@@ -1649,6 +1652,11 @@ body {
     right: 56px;
     border-top-right-radius: 0;
     border-bottom-right-radius: var(--border-radius);
+  }
+
+  .product-modal__close-btn {
+    top: -10px;
+    right: -10px;
   }
 
   .footer {
