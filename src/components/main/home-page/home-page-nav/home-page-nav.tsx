@@ -53,7 +53,7 @@ export default function HomePageNav() {
     <nav className="main__nav">
       <Link
         href="/"
-        className="main__nav__logo on-hover on-tap"
+        className="main__nav__logo"
         onClick={scrollToTop}
       >
         <LunaIcon />
