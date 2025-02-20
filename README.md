@@ -13,3 +13,9 @@ To start prod server:
 npm install
 npm run deploy:prod
 ```
+
+After that, the app is available at
+
+```bash
+http://localhost:3000
+```
