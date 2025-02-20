@@ -52,7 +52,7 @@ export default function Header() {
           </Link>
           <Link
             href="/promo"
-            className={clsx("on-hover on-tap sr-only", {
+            className={clsx("on-hover on-tap", {
               "current-path": pathName === "/promo",
             })}
           >
@@ -68,7 +68,7 @@ export default function Header() {
           </Link>
           <Link
             href="/work"
-            className={clsx("on-hover on-tap sr-only", {
+            className={clsx("on-hover on-tap", {
               "current-path": pathName === "/work",
             })}
           >
@@ -76,7 +76,7 @@ export default function Header() {
           </Link>
           <Link
             href="/about"
-            className={clsx("on-hover on-tap sr-only", {
+            className={clsx("on-hover on-tap", {
               "current-path": pathName === "/about",
             })}
           >
@@ -84,7 +84,7 @@ export default function Header() {
           </Link>
         </Popover.Group>
         <div className="header__nav__desktop-menu">
-          <Link href="/login" className="login-section sr-only on-hover on-tap">
+          <Link href="/login" className="login-section on-hover on-tap">
             Войти <span aria-hidden="true">&rarr;</span>
           </Link>
           <a href="tel:+79993220033" className="login-section on-hover on-tap">
@@ -127,11 +127,11 @@ export default function Header() {
               <ArrowRightCircleIcon className="link__icon" aria-hidden="true" />
               <span className="block">Главная</span>
             </Link>
-            <Link href="login" className="sr-only link on-hover on-tap">
+            <Link href="login" className=" link on-hover on-tap">
               <ArrowRightCircleIcon className="link__icon" aria-hidden="true" />
               <span className="block">Войти</span>
             </Link>
-            <Link href="promo" className="link on-hover on-tap sr-only">
+            <Link href="promo" className="link on-hover on-tap">
               <RocketLaunchIcon className="link__icon" aria-hidden="true" />
               <span className="block">Акции</span>
             </Link>
@@ -139,11 +139,11 @@ export default function Header() {
               <MapPinIcon className="link__icon" aria-hidden="true" />
               <span className="block">Контакты</span>
             </Link>
-            <Link href="work" className="link on-hover on-tap sr-only">
+            <Link href="work" className="link on-hover on-tap">
               <UserGroupIcon className="link__icon" aria-hidden="true" />
               <span className="block">Работа в ЛунаФуд</span>
             </Link>
-            <Link href="about" className="link on-hover on-tap sr-only">
+            <Link href="about" className="link on-hover on-tap">
               <MoonIcon className="link__icon" aria-hidden="true" />
               <span className="block">О нас</span>
             </Link>
