@@ -9,7 +9,7 @@ import { XMarkIcon } from "@heroicons/react/24/solid"
 import LineThrough from "@/components/icons/line-through"
 
 import pizzaItems from "@/db/products/pizza-items"
-// import drinkItems from "@/db/products/drink-items"
+import drinkItems from "@/db/products/drink-items"
 import comboItems from "@/db/products/combo-items"
 import dessertItems from "@/db/products/desserts-items"
 
@@ -261,7 +261,7 @@ export default function HomePageProducts() {
         </ul>
       </section>
 
-      {/* <section id="drinks" className="main__cards__group">
+      <section id="drinks" className="main__cards__group">
         <h2 className="main__cards__group__header">Напитки</h2>
         <ul className="main__cards__group__list">
           {drinkItems.map(
@@ -311,7 +311,7 @@ export default function HomePageProducts() {
             )
           )}
         </ul>
-      </section> */}
+      </section>
 
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
