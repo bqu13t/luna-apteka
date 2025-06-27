@@ -5,10 +5,11 @@ type NavItem = {
 }
 
 const navItems: NavItem[] = [
-  { id: "nav1", to: "pizza", name: "Пиццы" },
-  { id: "nav3", to: "combo", name: "Комбо" },
-  { id: "nav5", to: "desserts", name: "Десерты" },
-  { id: "nav2", to: "drinks", name: "Напитки" },
+  { id: "nav1", to: "over-the-counter", name: "Без рецепта" },
+  { id: "nav2", to: "prescription", name: "С рецептом" },
+  { id: "nav3", to: "vitamins", name: "Витамины" },
+  { id: "nav4", to: "cosmetics", name: "Косметика и уход" },
+  { id: "nav5", to: "medical-devices", name: "Медтехника" }
 ]
 
 export default navItems

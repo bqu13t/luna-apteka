@@ -1,5 +1,5 @@
 import Link from "next/link"
-import LunaLogo from "@/components/icons/luna-logo"
+import LunaIcon from "@/components/icons/luna-icon"
 
 interface LogoSectionProps {
   onClick: () => void
@@ -8,8 +8,8 @@ interface LogoSectionProps {
 export default function LogoSection({ onClick }: LogoSectionProps) {
   return (
     <Link className="on-hover on-tap" href="/" onClick={onClick}>
-      <span className="sr-only">Открыть главную страницу Луна Фуд</span>
-      <LunaLogo />
+      <span className="sr-only">Открыть главную страницу Аптеки</span>
+      <LunaIcon />
     </Link>
   )
 }

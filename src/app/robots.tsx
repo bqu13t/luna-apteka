@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/login/",
     },
-    sitemap: "https://lunafood.ru/sitemap.xml",
+    sitemap: "https://apteka-novosibirsk.ru/sitemap.xml",
   }
 }

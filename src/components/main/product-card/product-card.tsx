@@ -1,60 +1,67 @@
-import pizzaItems from "@/db/products/pizza-items"
-import comboItems from "@/db/products/combo-items"
+import medicineItems from "@/db/products/medicine-items"
+import prescriptionItems from "@/db/products/prescription-items"
+import vitaminItems from "@/db/products/vitamin-items"
+import cosmeticItems from "@/db/products/cosmetic-items"
+import medtechnicItems from "@/db/products/medtechnic-items"
+
 
 import Image from "next/image"
-
 import { Fragment } from 'react'
 import { Tab } from '@headlessui/react'
+import clsx from "clsx"
 
 import WeightIcon from "@/components/icons/weight-icon"
-import MeatIcon from "@/components/icons/meat-icon"
-import CheeseIcon from "@/components/icons/cheese-icon"
+// import ActiveComponentIcon from "@/components/icons/active-component-icon"
+// import PackageIcon from "@/components/icons/package-icon"
 import PriceIcon from "@/components/icons/price-icon"
-import clsx from "clsx"
 import LineThrough from "@/components/icons/line-through"
 
 export default function ProductCard({ id }: { id: string }) {
   let productItem
 
-  if (id.startsWith('pizza')) {
-    productItem = pizzaItems.find((item) => item.id === id)
-  } else if (id.startsWith('combo')) {
-    productItem = comboItems.find((item) => item.id === id)
+  if (id.startsWith('med')) {
+    productItem = medicineItems.find((item) => item.id === id)
+  } else if (id.startsWith('rx')) {
+    productItem = prescriptionItems.find((item) => item.id === id)
+  } else if (id.startsWith('vit')) {
+    productItem = vitaminItems.find((item) => item.id === id)
+  } else if (id.startsWith('cos')) {
+    productItem = cosmeticItems.find((item) => item.id === id)
+  } else if (id.startsWith('tec')) {
+    productItem = medtechnicItems.find((item) => item.id === id)
   }
 
-  const name = productItem ? productItem.name : ""
-  const description = productItem ? productItem.description : ""
+  const name = productItem?.name || ""
+  const description = productItem?.description || ""
 
-  const priceSm = productItem ? productItem.price_sm : null
-  const oldPriceSm = productItem ? productItem.old_price_sm : null
-  const weightSm = productItem ? productItem.weight_sm : null
-  const meatWeightSm = productItem ? productItem.meat_weight_sm : null
-  const cheeseWeightSm = productItem ? productItem.cheese_weight_sm : null
+  const priceSm = productItem?.price_sm || null
+  const oldPriceSm = productItem?.old_price_sm || null
+  const weightSm = productItem?.weight_sm || null
+  const activeComponentSm = productItem?.active_component_sm || null
+  const volumeSm = productItem?.weight_sm || null
 
-  const priceLg = productItem ? productItem.price_lg : null
-  const oldPriceLg = productItem ? productItem.old_price_lg : null
-  const weightLg = productItem ? productItem.weight_lg : null
-  const meatWeightLg = productItem ? productItem.meat_weight_lg : null
-  const cheeseWeightLg = productItem ? productItem.cheese_weight_lg : null
+  const priceLg = productItem?.price_lg || null
+  const oldPriceLg = productItem?.old_price_lg || null
+  const weightLg = productItem?.weight_lg || null
+  const activeComponentLg = productItem?.active_component_lg || null
+  const volumeLg = productItem?.weight_lg || null
 
-  const isPromo = productItem ? productItem.is_promo : null
-  const isNew = productItem ? productItem.is_new : null
-  const isTop = productItem ? productItem.is_top : null
-  const isMeatless = productItem ? productItem.is_meatless : null
-  const isProfit = productItem ? productItem.is_profit : null
+  const isPromo = productItem?.is_promo || false
+  const isNew = productItem?.is_new || false
+  const isTop = productItem?.is_top || false
+  const isHerbal = productItem?.is_herbal || false
+  const isProfit = productItem?.is_profit || false
 
-  const promoTitle = productItem ? productItem.promo_title : null
+  const promoTitle = productItem?.promo_title || ""
+  const imgSrc = productItem?.img_url || ""
+  const imgAlt = productItem?.description || "Лекарственный препарат"
 
-  const imgSrc = productItem ? productItem.img_url : ""
-  const imgAlt = productItem ? productItem.description : ""
-
-  const blurDataURL =
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII="
+  const blurDataURL = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII="
 
   return (
     <div id={id} className="product-modal">
       <Image
-        className=""
+        className="product-image"
         placeholder="blur"
         blurDataURL={blurDataURL}
         quality={75}
@@ -72,79 +79,70 @@ export default function ProductCard({ id }: { id: string }) {
             <p className="value">{description}</p>
           </div>
         </div>
+
         <Tab.Group>
-          <Tab.List className="poduct-modal__size-tablist">
+          <Tab.List className="product-modal__size-tablist">
             <Tab as={Fragment}>
               {({ selected }) => (
-                <button
-                  className={
-                    selected ? 'tab-selected tab' : 'tab'
-                  }
-                >
-                  Маленькая 25 см
+                <button className={selected ? 'tab-selected tab' : 'tab'}>
+                  Маленькая
                 </button>
               )}
             </Tab>
             <Tab as={Fragment}>
               {({ selected }) => (
-                <button
-                  className={
-                    selected ? 'tab-selected tab' : 'tab'
-                  }
-                >
-                  Большая 40 см
+                <button className={selected ? 'tab-selected tab' : 'tab'}>
+                  Большая
                 </button>
               )}
             </Tab>
           </Tab.List>
+
           <Tab.Panels>
+            {/* Маленькая упаковка */}
             <Tab.Panel className="flex flex-col flex-wrap gap-4">
-              <div
-                className={clsx("promo", {
-                  visible: isPromo === true,
-                  new: isNew === true,
-                  "top-rate": isTop === true,
-                  meatless: isMeatless === true,
-                  profit: isProfit === true,
-                })}
-              >
-                {isProfit === true
-                  ? `${promoTitle} ${Math.ceil(
-                    (priceSm! / oldPriceSm! - 1) * -100
-                  )}%`
-                  : `${promoTitle}`}
+              <div className={clsx("promo", {
+                visible: isPromo,
+                new: isNew,
+                "top-rate": isTop,
+                meatless: isHerbal,
+                profit: isProfit,
+              })}>
+                {isProfit 
+                  ? `${promoTitle} ${Math.ceil((priceSm! / oldPriceSm! - 1) * -100)}%` 
+                  : promoTitle}
               </div>
+
               <div className="product-feature">
                 <div className="product-feature__icon">
                   <WeightIcon />
                 </div>
                 <div className="product-feature__description">
-                  <span className="title">Общий вес</span>
+                  <span className="title">Вес упаковки</span>
                   <p className="value"><strong>{weightSm} гр</strong></p>
                 </div>
               </div>
-              <div
-                className={clsx("product-feature", {
-                  "product-feature-hidden": isMeatless === true,
-                })}
-              >
-                <div className="product-feature__icon">
-                  <MeatIcon />
-                </div>
-                <div className="product-feature__description">
-                  <span className="title">Мясная начинка</span>
-                  <p className="value"><strong>{Math.round(meatWeightSm! / weightSm! * 100)}% - {meatWeightSm} гр</strong></p>
-                </div>
-              </div>
+
               <div className="product-feature">
                 <div className="product-feature__icon">
-                  <CheeseIcon />
+                  {/* <ActiveComponentIcon /> */}
                 </div>
                 <div className="product-feature__description">
-                  <span className="title">Cырная начинка</span>
-                  <p className="value"><strong>{Math.round(cheeseWeightSm! / weightSm! * 100)}% - {cheeseWeightSm} гр</strong></p>
+                  <span className="title">Активное вещество</span>
+                  <p className="value"><strong>{activeComponentSm} мг</strong></p>
                 </div>
               </div>
+
+              <div className="product-feature">
+                <div className="product-feature__icon">
+                  {/* <PackageIcon /> */}
+                </div>
+                <div className="product-feature__description">
+                  <span className="title">Количество</span>
+                  <p className="value"><strong>{volumeSm} шт/уп</strong></p>
+                </div>
+              </div>
+
               <div className="product-feature">
                 <div className="product-feature__icon">
                   <PriceIcon />
@@ -152,68 +150,62 @@ export default function ProductCard({ id }: { id: string }) {
                 <div className="product-feature__description">
                   <span className="title">Цена</span>
                   <div className="price-section">
-                    <p className="value">
-                      <strong>{priceSm} ₽</strong>
-                    </p>
-                    <span
-                      className={clsx("old-price-section", {
-                        visible: isProfit === true,
-                      })}
-                    >
-                      <LineThrough />
-                      <span className="old-price">{`${oldPriceSm}  ₽`}</span>
-                    </span>
+                    <p className="value"><strong>{priceSm} ₽</strong></p>
+                    {isProfit && (
+                      <span className="old-price-section">
+                        <LineThrough />
+                        <span className="old-price">{oldPriceSm} ₽</span>
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
             </Tab.Panel>
+
+            {/* Большая упаковка */}
             <Tab.Panel className="flex flex-col flex-wrap gap-4">
-              <div
-                className={clsx("promo", {
-                  visible: isPromo === true,
-                  new: isNew === true,
-                  "top-rate": isTop === true,
-                  meatless: isMeatless === true,
-                  profit: isProfit === true,
-                })}
-              >
-                {isProfit === true
-                  ? `${promoTitle} ${Math.ceil(
-                    (priceLg! / oldPriceLg! - 1) * -100
-                  )}%`
-                  : `${promoTitle}`}
+              <div className={clsx("promo", {
+                visible: isPromo,
+                new: isNew,
+                "top-rate": isTop,
+                meatless: isHerbal,
+                profit: isProfit,
+              })}>
+                {isProfit 
+                  ? `${promoTitle} ${Math.ceil((priceLg! / oldPriceLg! - 1) * -100)}%` 
+                  : promoTitle}
               </div>
+
               <div className="product-feature">
                 <div className="product-feature__icon">
                   <WeightIcon />
                 </div>
                 <div className="product-feature__description">
-                  <span className="title">Общий вес</span>
+                  <span className="title">Вес упаковки</span>
                   <p className="value"><strong>{weightLg} гр</strong></p>
                 </div>
               </div>
-              <div
-                className={clsx("product-feature", {
-                  "product-feature-hidden": isMeatless === true,
-                })}
-              >
-                <div className="product-feature__icon">
-                  <MeatIcon />
-                </div>
-                <div className="product-feature__description">
-                  <span className="title">Мясная начинка</span>
-                  <p className="value"><strong>{Math.round(meatWeightLg! / weightLg! * 100)}% - {meatWeightLg} гр</strong></p>
-                </div>
-              </div>
+
               <div className="product-feature">
                 <div className="product-feature__icon">
-                  <CheeseIcon />
+                  {/* <ActiveComponentIcon /> */}
                 </div>
                 <div className="product-feature__description">
-                  <span className="title">Cырная начинка</span>
-                  <p className="value"><strong>{Math.round(cheeseWeightLg! / weightLg! * 100)}% - {cheeseWeightLg} гр</strong></p>
+                  <span className="title">Активное вещество</span>
+                  <p className="value"><strong>{activeComponentLg} мг</strong></p>
                 </div>
               </div>
+
+              <div className="product-feature">
+                <div className="product-feature__icon">
+                  {/* <PackageIcon /> */}
+                </div>
+                <div className="product-feature__description">
+                  <span className="title">Количество</span>
+                  <p className="value"><strong>{volumeLg} шт/уп</strong></p>
+                </div>
+              </div>
+
               <div className="product-feature">
                 <div className="product-feature__icon">
                   <PriceIcon />
@@ -221,17 +213,13 @@ export default function ProductCard({ id }: { id: string }) {
                 <div className="product-feature__description">
                   <span className="title">Цена</span>
                   <div className="price-section">
-                    <p className="value">
-                      <strong>{priceLg} ₽</strong>
-                    </p>
-                    <span
-                      className={clsx("old-price-section", {
-                        visible: isProfit === true,
-                      })}
-                    >
-                      <LineThrough />
-                      <span className="old-price">{`${oldPriceLg}  ₽`}</span>
-                    </span>
+                    <p className="value"><strong>{priceLg} ₽</strong></p>
+                    {isProfit && (
+                      <span className="old-price-section">
+                        <LineThrough />
+                        <span className="old-price">{oldPriceLg} ₽</span>
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>

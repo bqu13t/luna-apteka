@@ -8,10 +8,11 @@ import { XMarkIcon } from "@heroicons/react/24/solid"
 
 import LineThrough from "@/components/icons/line-through"
 
-import pizzaItems from "@/db/products/pizza-items"
-import drinkItems from "@/db/products/drink-items"
-import comboItems from "@/db/products/combo-items"
-import dessertItems from "@/db/products/desserts-items"
+import medicineItems from "@/db/products/medicine-items"
+import cosmeticItems from "@/db/products/cosmetic-items"
+import prescriptionItems from "@/db/products/prescription-items"
+import vitaminItems from "@/db/products/vitamin-items"
+import medtechnicItems from "@/db/products/medtechnic-items"
 
 import HomePageProductModal from "@/components/main/home-page/home-page-products/home-page-product-modal"
 
@@ -33,10 +34,10 @@ export default function HomePageProducts() {
 
   return (
     <section className="main__cards">
-      <section id="pizza" className="main__cards__group">
-        <h2 className="main__cards__group__header">Пиццы</h2>
+      <section id="over-the-counter" className="main__cards__group">
+        <h2 className="main__cards__group__header">Без рецепта</h2>
         <ul className="main__cards__group__list">
-          {pizzaItems.map(
+          {medicineItems.map(
             ({
               id,
               name,
@@ -45,7 +46,7 @@ export default function HomePageProducts() {
               is_promo,
               is_new,
               is_top,
-              is_meatless,
+              is_herbal,
               is_profit,
               old_price_sm,
               promo_title,
@@ -69,7 +70,7 @@ export default function HomePageProducts() {
                       visible: is_promo === true,
                       new: is_new === true,
                       "top-rate": is_top === true,
-                      meatless: is_meatless === true,
+                      meatless: is_herbal === true,
                       profit: is_profit === true,
                     })}
                   >
@@ -89,11 +90,11 @@ export default function HomePageProducts() {
                     onClick={() => {
                       openModal(<HomePageProductModal id={id} />)
                     }}
-                    alt={`Пицца ${name} с бесплатной доставкой в Новосибирске от пиццерии ЛунаФуд`}
+                    alt={`Забронируй ${name} в аптеке в Новосибирске`}
                   />
                 </div>
                 <div className="card-content">
-                  <h3 className="name">{`Пицца ${name}`}</h3>
+                  <h3 className="name">{`${name}`}</h3>
                   <p className="description">{description}</p>
                   <div className="price-section">
                     <p className="price">{`от ${price_sm} ₽`}</p>
@@ -114,10 +115,10 @@ export default function HomePageProducts() {
 
       </section>
 
-      <section id="combo" className="main__cards__group">
-        <h2 className="main__cards__group__header">Комбо</h2>
+      <section id="prescription" className="main__cards__group">
+        <h2 className="main__cards__group__header">С рецептом</h2>
         <ul className="main__cards__group__list">
-          {comboItems.map(
+          {prescriptionItems.map(
             ({
               id,
               name,
@@ -126,7 +127,7 @@ export default function HomePageProducts() {
               is_promo,
               is_new,
               is_top,
-              is_meatless,
+              is_herbal,
               is_profit,
               old_price_sm,
               promo_title,
@@ -150,12 +151,12 @@ export default function HomePageProducts() {
                       visible: is_promo === true,
                       new: is_new === true,
                       "top-rate": is_top === true,
-                      meatless: is_meatless === true,
+                      meatless: is_herbal === true,
                       profit: is_profit === true,
                     })}
                   >
                     {is_profit === true
-                      ? `${promo_title} ${Math.round(
+                      ? `${promo_title} ${Math.ceil(
                         (price_sm / old_price_sm - 1) * -100
                       )}%`
                       : `${promo_title}`}
@@ -170,11 +171,11 @@ export default function HomePageProducts() {
                     onClick={() => {
                       openModal(<HomePageProductModal id={id} />)
                     }}
-                    alt={`Комбо ${name} с бесплатной доставкой в Новосибирске от пиццерии ЛунаФуд`}
+                    alt={`Забронируй ${name} в аптеке в Новосибирске`}
                   />
                 </div>
                 <div className="card-content">
-                  <h3 className="name">{name}</h3>
+                  <h3 className="name">{`${name}`}</h3>
                   <p className="description">{description}</p>
                   <div className="price-section">
                     <p className="price">{`от ${price_sm} ₽`}</p>
@@ -195,38 +196,49 @@ export default function HomePageProducts() {
 
       </section>
 
-      <section id="desserts" className="main__cards__group">
-        <h2 className="main__cards__group__header">Десерты</h2>
+      <section id="vitamins" className="main__cards__group">
+        <h2 className="main__cards__group__header">Витамины</h2>
         <ul className="main__cards__group__list">
-          {dessertItems.map(
+          {vitaminItems.map(
             ({
               id,
               name,
               description,
-              price,
+              price_sm,
               is_promo,
               is_new,
               is_top,
-              is_meatless,
+              is_herbal,
               is_profit,
-              old_price,
+              old_price_sm,
               promo_title,
               img_url,
             }) => (
-              <li key={id}>
+              <li
+                id={id}
+                key={id}
+              >
+                <button
+                  onClick={() => {
+                    openModal(<HomePageProductModal id={id} />)
+                  }}
+                  className="open-modal-btn on-hover on-tap"
+                >
+                  Подробнее
+                </button>
                 <div className="card-image">
                   <div
                     className={clsx("promo", {
                       visible: is_promo === true,
                       new: is_new === true,
                       "top-rate": is_top === true,
-                      meatless: is_meatless === true,
+                      meatless: is_herbal === true,
                       profit: is_profit === true,
                     })}
                   >
                     {is_profit === true
-                      ? `${promo_title} ${Math.round(
-                        (price / old_price - 1) * -100
+                      ? `${promo_title} ${Math.ceil(
+                        (price_sm / old_price_sm - 1) * -100
                       )}%`
                       : `${promo_title}`}
                   </div>
@@ -237,21 +249,24 @@ export default function HomePageProducts() {
                     src={img_url}
                     width={150}
                     height={150}
-                    alt={`Десерт ${name} с бесплатной доставкой в Новосибирске от пиццерии ЛунаФуд`}
+                    onClick={() => {
+                      openModal(<HomePageProductModal id={id} />)
+                    }}
+                    alt={`Забронируй ${name} в аптеке в Новосибирске`}
                   />
                 </div>
                 <div className="card-content">
-                  <h3 className="name">{name}</h3>
+                  <h3 className="name">{`${name}`}</h3>
                   <p className="description">{description}</p>
                   <div className="price-section">
-                    <p className="price">{`${price} ₽`}</p>
+                    <p className="price">{`от ${price_sm} ₽`}</p>
                     <span
                       className={clsx("old-price-section", {
                         visible: is_profit === true,
                       })}
                     >
                       <LineThrough />
-                      <span className="old-price">{`${old_price}  ₽`}</span>
+                      <span className="old-price">{`${old_price_sm}  ₽`}</span>
                     </span>
                   </div>
                 </div>
@@ -261,34 +276,49 @@ export default function HomePageProducts() {
         </ul>
       </section>
 
-      <section id="drinks" className="main__cards__group">
-        <h2 className="main__cards__group__header">Напитки</h2>
+      <section id="cosmetics" className="main__cards__group">
+        <h2 className="main__cards__group__header">Косметика и уход</h2>
         <ul className="main__cards__group__list">
-          {drinkItems.map(
+          {cosmeticItems.map(
             ({
               id,
               name,
               description,
-              price,
+              price_sm,
               is_promo,
               is_new,
+              is_top,
+              is_herbal,
               is_profit,
-              old_price,
+              old_price_sm,
               promo_title,
               img_url,
             }) => (
-              <li key={id}>
+              <li
+                id={id}
+                key={id}
+              >
+                <button
+                  onClick={() => {
+                    openModal(<HomePageProductModal id={id} />)
+                  }}
+                  className="open-modal-btn on-hover on-tap"
+                >
+                  Подробнее
+                </button>
                 <div className="card-image">
                   <div
                     className={clsx("promo", {
                       visible: is_promo === true,
                       new: is_new === true,
+                      "top-rate": is_top === true,
+                      meatless: is_herbal === true,
                       profit: is_profit === true,
                     })}
                   >
                     {is_profit === true
-                      ? `${promo_title} ${Math.round(
-                        (price / old_price - 1) * -100
+                      ? `${promo_title} ${Math.ceil(
+                        (price_sm / old_price_sm - 1) * -100
                       )}%`
                       : `${promo_title}`}
                   </div>
@@ -299,13 +329,106 @@ export default function HomePageProducts() {
                     src={img_url}
                     width={150}
                     height={150}
-                    alt={`${name} с бесплатной доставкой в Новосибирске от пиццерии ЛунаФуд`}
+                    onClick={() => {
+                      openModal(<HomePageProductModal id={id} />)
+                    }}
+                    alt={`Забронируй ${name} в аптеке в Новосибирске`}
                   />
                 </div>
                 <div className="card-content">
                   <h3 className="name">{`${name}`}</h3>
                   <p className="description">{description}</p>
-                  <p className="price">{`${price} ₽`}</p>
+                  <div className="price-section">
+                    <p className="price">{`от ${price_sm} ₽`}</p>
+                    <span
+                      className={clsx("old-price-section", {
+                        visible: is_profit === true,
+                      })}
+                    >
+                      <LineThrough />
+                      <span className="old-price">{`${old_price_sm}  ₽`}</span>
+                    </span>
+                  </div>
+                </div>
+              </li>
+            )
+          )}
+        </ul>
+      </section>
+
+      <section id="medical-devices" className="main__cards__group">
+        <h2 className="main__cards__group__header">Медтехника</h2>
+        <ul className="main__cards__group__list">
+          {medtechnicItems.map(
+            ({
+              id,
+              name,
+              description,
+              price_sm,
+              is_promo,
+              is_new,
+              is_top,
+              is_herbal,
+              is_profit,
+              old_price_sm,
+              promo_title,
+              img_url,
+            }) => (
+              <li
+                id={id}
+                key={id}
+              >
+                <button
+                  onClick={() => {
+                    openModal(<HomePageProductModal id={id} />)
+                  }}
+                  className="open-modal-btn on-hover on-tap"
+                >
+                  Подробнее
+                </button>
+                <div className="card-image">
+                  <div
+                    className={clsx("promo", {
+                      visible: is_promo === true,
+                      new: is_new === true,
+                      "top-rate": is_top === true,
+                      meatless: is_herbal === true,
+                      profit: is_profit === true,
+                    })}
+                  >
+                    {is_profit === true
+                      ? `${promo_title} ${Math.ceil(
+                        (price_sm / old_price_sm - 1) * -100
+                      )}%`
+                      : `${promo_title}`}
+                  </div>
+                  <Image
+                    placeholder="blur"
+                    blurDataURL={blurDataURL}
+                    quality={50}
+                    src={img_url}
+                    width={150}
+                    height={150}
+                    onClick={() => {
+                      openModal(<HomePageProductModal id={id} />)
+                    }}
+                    alt={`Забронируй ${name} в аптеке в Новосибирске`}
+                  />
+                </div>
+                <div className="card-content">
+                  <h3 className="name">{`${name}`}</h3>
+                  <p className="description">{description}</p>
+                  <div className="price-section">
+                    <p className="price">{`от ${price_sm} ₽`}</p>
+                    <span
+                      className={clsx("old-price-section", {
+                        visible: is_profit === true,
+                      })}
+                    >
+                      <LineThrough />
+                      <span className="old-price">{`${old_price_sm}  ₽`}</span>
+                    </span>
+                  </div>
                 </div>
               </li>
             )
@@ -339,7 +462,6 @@ export default function HomePageProducts() {
           </div>
         </Dialog>
       </Transition>
-
     </section>
   )
 }

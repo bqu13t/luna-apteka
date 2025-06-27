@@ -4,9 +4,9 @@ import { PhoneIcon, MapPinIcon } from "@heroicons/react/24/solid"
 export default function HomePageHeader() {
   return (
     <header className="main__header">
-      <h1>Доставка пиццы в Новосибирске от пиццерии ЛунаФуд</h1>
+      <h1>Лекарства в Новосибирске от Аптеки</h1>
       <p className="main__header__description">
-        Закажите бесплатную доставку пиццы по телефону или в нашей пиццерии
+        Забронируйте лекарства в аптеке и получите их с доставкой
       </p>
       <div className="main__header__contacts">
         <div className="contact-section">
@@ -45,8 +45,8 @@ export default function HomePageHeader() {
           </div>
           <div className="contact">
             <span className="title">Телефон</span>
-            <a href="tel:+79993220033" className="value on-hover on-tap">
-              +7 (999) 322-00-33
+            <a href="tel:+79999999999" className="value on-hover on-tap">
+              +7 (999) 999-99-99
             </a>
           </div>
         </div>

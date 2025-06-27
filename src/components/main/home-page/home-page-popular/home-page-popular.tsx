@@ -57,7 +57,7 @@ export default function HomePagePopular() {
           <h3>Топ 5</h3>
           <p>за 30 дней</p>
         </li>
-        {topRateItems.map(({ id, name, price_sm, top_rate, img_url }, index) => (
+        {topRateItems.map(({ id, name, price_sm, rating, img_url }, index) => (
           <li
             key={`top-${id}`}
             className="main__popular__item"
@@ -65,8 +65,8 @@ export default function HomePagePopular() {
               openModal(<HomePageProductModal id={id} />)
             }}
           >
-            <p className="rate-number">{top_rate}</p>
-            <span className="rate-number-color">{top_rate}</span>
+            <p className="rate-number">{rating}</p>
+            <span className="rate-number-color">{rating}</span>
             <Image
               placeholder="blur"
               blurDataURL={blurDataURL}

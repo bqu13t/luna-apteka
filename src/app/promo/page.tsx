@@ -5,7 +5,7 @@ import Promo from "@/components/promo/promo"
 import Footer from "@/components/footer/footer"
 
 export const metadata: Metadata = {
-  title: "🍕 Акции и скидки | Луна Фуд | Сеть пиццерий в Новосибирске",
+  title: "💊 Акции и спецпредложения | Аптека Новосибирск | Выгодные цены на лекарства",
   alternates: {
     canonical: "/promo",
   },

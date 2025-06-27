@@ -1,44 +1,49 @@
-import pizzaItems from "@/db/products/pizza-items"
+import otcMedicines from "@/db/products/medicine-items"
 
-type TopRateItem = {
+type TopRateMedicine = {
   id: string
   name: string
   description: string
 
-  price_sm: number            // цена маленькой пиццы
-  weight_sm: number           // вес маленькой пиццы
-  meat_weight_sm: number      // вес мясной начинки в маленькой пицце
-  cheese_weight_sm: number    // вес сырной начинки в маленькой пицце
+  price_sm: number            // цена малой упаковки
+  weight_sm: number           // вес малой упаковки (г)
+  active_component_sm: number // активное вещество (мг)
+  dosage_sm: number           // количество доз в упаковке
 
-  price_lg: number
-  weight_lg: number           // вес большой пиццы
-  meat_weight_lg: number      // вес мясной начинки в большой пицце
-  cheese_weight_lg: number    // вес сырной начинки в большой пицце
+  price_lg: number            // цена большой упаковки
+  weight_lg: number           // вес большой упаковки (г)
+  active_component_lg: number // активное вещество (мг)
+  dosage_lg: number           // количество доз в упаковке
 
-  top_rate: number | null
-  is_promo: boolean
-  is_new: boolean
-  is_top: boolean
-  is_meatless: boolean
-  is_profit: boolean
+  rating: number | null       // рейтинг (0-5)
+  is_promo: boolean           // участвует в акции
+  is_new: boolean             // новинка
+  is_top: boolean             // топ продаж
+  is_herbal: boolean          // растительный препарат
+  is_profit: boolean          // специальное предложение
 
-  old_price_sm: number
-  old_price_lg: number
-  promo_title: string
+  old_price_sm: number        // старая цена малой упаковки
+  old_price_lg: number        // старая цена большой упаковки
+  promo_title: string         // название акции
 
-  img_url: string
+  img_url: string             // изображение препарата
+  category: string            // категория (антибиотики, витамины и т.д.)
 }
 
-const topRateItems: TopRateItem[] = []
+const topRateMedicines: TopRateMedicine[] = []
 
-pizzaItems
-  .filter((item) => item.top_rate !== null && !topRateItems.includes(item))
-  .forEach((item) => topRateItems.push(item))
+// Фильтрация и сортировка препаратов
+otcMedicines
+  .filter(item => item.rating !== null && !topRateMedicines.includes(item))
+  .forEach(item => topRateMedicines.push(item))
 
-topRateItems.sort((a, b) => {
-  if (a.top_rate! > b.top_rate!) return 1
-  if (a.top_rate! < b.top_rate!) return -1
+// Сортировка по рейтингу (по убыванию)
+topRateMedicines.sort((a, b) => {
+  if (a.rating! > b.rating!) return 1  // изменено на -1 для сортировки по убыванию
+  if (a.rating! < b.rating!) return -1
   return 0
 })
 
-export default topRateItems
+const top5Medicines = topRateMedicines.slice(0, 5)
+
+export default top5Medicines

@@ -1208,7 +1208,7 @@ body {
 }
 
 .main__cards__group__list li img {
-  filter: var(--drop-shadow);
+  /* filter: var(--drop-shadow); */
   transition: var(--transition);
 }
 

@@ -58,7 +58,7 @@ export default function HomePageNav() {
       >
         <LunaIcon />
         <span className="sr-only">
-          Вернуться к началу страницы Луна Фуд
+          Вернуться к началу страницы
         </span>
       </Link>
       <ul className="main__nav__list">

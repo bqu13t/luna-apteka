@@ -7,7 +7,7 @@ import Footer from "@/components/footer/footer"
 
 export const metadata: Metadata = {
   title:
-    "Номер телефона пиццерии в Новосибирске +7 (999) 322-00-33 — адрес пиццерии на карте, часы работы Луна Фуд",
+    "Номер телефона онлайн-аптеки в Новосибирске +7 (800) 800-80-80 — адрес аптеки на карте, часы работы аптеки",
   alternates: {
     canonical: "/contacts",
   },
