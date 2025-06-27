@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Nunito } from "next/font/google"
 import "./globals.css"
 import Script from "next/script"
+import { CartProvider } from "@/db/cart/cart-store"
 
 const nunito = Nunito({
   subsets: ["cyrillic", "latin"],
@@ -44,7 +45,11 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <Script src="/scripts/yandex.js" />
-      <body className={`${nunito.className} antialiased`}>{children}</body>
+      <body className={`${nunito.className} antialiased`}>
+        <CartProvider>
+          {children}
+        </CartProvider> 
+      </body>
     </html>
   )
 }

@@ -1,9 +1,10 @@
+"use client"
+
 import medicineItems from "@/db/products/medicine-items"
 import prescriptionItems from "@/db/products/prescription-items"
 import vitaminItems from "@/db/products/vitamin-items"
 import cosmeticItems from "@/db/products/cosmetic-items"
 import medtechnicItems from "@/db/products/medtechnic-items"
-
 
 import Image from "next/image"
 import { Fragment } from 'react'
@@ -11,12 +12,13 @@ import { Tab } from '@headlessui/react'
 import clsx from "clsx"
 
 import WeightIcon from "@/components/icons/weight-icon"
-// import ActiveComponentIcon from "@/components/icons/active-component-icon"
-// import PackageIcon from "@/components/icons/package-icon"
 import PriceIcon from "@/components/icons/price-icon"
 import LineThrough from "@/components/icons/line-through"
+import { useCart } from "../../../db/cart/cart-store"
 
 export default function ProductCard({ id }: { id: string }) {
+  const { addToCart } = useCart()
+
   let productItem
 
   if (id.startsWith('med')) {
@@ -57,6 +59,17 @@ export default function ProductCard({ id }: { id: string }) {
   const imgAlt = productItem?.description || "Лекарственный препарат"
 
   const blurDataURL = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mNk4GLAAIxDWRAAMasAb0wzB6IAAAAASUVORK5CYII="
+
+  function handleAdd(size: "sm" | "lg") {
+    const price = size === "sm" ? priceSm : priceLg
+    if (!price) return
+    addToCart({
+      id,
+      name,
+      size,
+      price,
+    })
+  }
 
   return (
     <div id={id} className="product-modal">
@@ -124,23 +137,13 @@ export default function ProductCard({ id }: { id: string }) {
               </div>
 
               <div className="product-feature">
-                <div className="product-feature__icon">
-                  {/* <ActiveComponentIcon /> */}
-                </div>
-                <div className="product-feature__description">
-                  <span className="title">Активное вещество</span>
-                  <p className="value"><strong>{activeComponentSm} мг</strong></p>
-                </div>
+                <span className="title">Активное вещество</span>
+                <p className="value"><strong>{activeComponentSm} мг</strong></p>
               </div>
 
               <div className="product-feature">
-                <div className="product-feature__icon">
-                  {/* <PackageIcon /> */}
-                </div>
-                <div className="product-feature__description">
-                  <span className="title">Количество</span>
-                  <p className="value"><strong>{volumeSm} шт/уп</strong></p>
-                </div>
+                <span className="title">Количество</span>
+                <p className="value"><strong>{volumeSm} шт/уп</strong></p>
               </div>
 
               <div className="product-feature">
@@ -160,6 +163,13 @@ export default function ProductCard({ id }: { id: string }) {
                   </div>
                 </div>
               </div>
+
+              <button
+                onClick={() => handleAdd("sm")}
+                className="btn-primary self-start"
+              >
+                В корзину
+              </button>
             </Tab.Panel>
 
             {/* Большая упаковка */}
@@ -187,23 +197,13 @@ export default function ProductCard({ id }: { id: string }) {
               </div>
 
               <div className="product-feature">
-                <div className="product-feature__icon">
-                  {/* <ActiveComponentIcon /> */}
-                </div>
-                <div className="product-feature__description">
-                  <span className="title">Активное вещество</span>
-                  <p className="value"><strong>{activeComponentLg} мг</strong></p>
-                </div>
+                <span className="title">Активное вещество</span>
+                <p className="value"><strong>{activeComponentLg} мг</strong></p>
               </div>
 
               <div className="product-feature">
-                <div className="product-feature__icon">
-                  {/* <PackageIcon /> */}
-                </div>
-                <div className="product-feature__description">
-                  <span className="title">Количество</span>
-                  <p className="value"><strong>{volumeLg} шт/уп</strong></p>
-                </div>
+                <span className="title">Количество</span>
+                <p className="value"><strong>{volumeLg} шт/уп</strong></p>
               </div>
 
               <div className="product-feature">
@@ -223,6 +223,13 @@ export default function ProductCard({ id }: { id: string }) {
                   </div>
                 </div>
               </div>
+
+              <button
+                onClick={() => handleAdd("lg")}
+                className="btn-primary self-start"
+              >
+                В корзину
+              </button>
             </Tab.Panel>
           </Tab.Panels>
         </Tab.Group>
