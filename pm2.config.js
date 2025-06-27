@@ -26,6 +26,7 @@ module.exports = {
       name: "luna-frontend",
       script: "node_modules/next/dist/bin/next",
       args: "start",
+      cwd: "/home/root/luna-apteka",
       instances: RUN_ENV_MAP[argEnv].instances,
       exec_mode: "cluster",
       watch: false,
